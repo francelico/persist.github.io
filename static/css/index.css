@@ -1,0 +1,293 @@
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+
+.footer .icon-link {
+  font-size: 25px;
+  color: #000;
+}
+
+.link-block a {
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.persist {
+  font-variant: small-caps;
+}
+
+
+.teaser .hero-body {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
+
+.teaser {
+  font-family: 'Google Sans', sans-serif;
+}
+
+
+.publication-title {
+}
+
+.publication-banner {
+  max-height: parent;
+
+}
+
+.publication-banner video {
+  position: relative;
+  left: auto;
+  top: auto;
+  transform: none;
+  object-fit: fit;
+}
+
+.publication-header .hero-body {
+}
+
+.publication-title {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.section-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 3rem;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 3rem;
+  letter-spacing: 0.02em;
+}
+
+.publication-authors {
+  font-family: 'Google Sans', sans-serif;
+}
+
+.publication-venue {
+  color: #555;
+  width: fit-content;
+  font-weight: bold;
+}
+
+.publication-awards {
+  color: #ff3860;
+  width: fit-content;
+  font-weight: bolder;
+}
+
+.publication-authors {
+}
+
+.publication-authors a {
+  color: hsl(204, 86%, 53%) !important;
+}
+
+.publication-authors a:hover {
+  text-decoration: underline;
+}
+
+.author-block {
+  display: inline-block;
+}
+
+.publication-banner img {
+}
+
+.publication-authors {
+  /*color: #4286f4;*/
+}
+
+/*override all fonts to white when using a video grid*/
+.hero-section .publication-title,
+.hero-section .publication-authors,
+.hero-section .publication-authors a,
+.hero-section .publication-venue,
+.hero-section .publication-authors span,
+.hero-section .publication-authors sup {
+  color: #ffffff !important;
+}
+
+.publication-video {
+  position: relative;
+  width: 100%;
+  height: 0;
+  padding-bottom: 56.25%;
+
+  overflow: hidden;
+  border-radius: 10px !important;
+}
+
+.publication-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.publication-body img {
+}
+
+.results-carousel {
+  overflow: hidden;
+}
+
+.results-carousel .item {
+  margin: 5px;
+  overflow: hidden;
+  border: 1px solid #bbb;
+  border-radius: 10px;
+  padding: 0;
+  font-size: 0;
+}
+
+.results-carousel video {
+  margin: 0;
+}
+
+
+.interpolation-panel {
+  background: #f5f5f5;
+  border-radius: 10px;
+}
+
+.method-image {
+  width: 100%;
+  border-radius: 5px;
+  margin: 2rem 0;
+}
+
+.inline-icon {
+  height: 1em; /* similar to 1.5ex in LaTeX */
+  vertical-align: middle; /* keeps icon aligned with text */
+  display: inline-block;
+}
+
+.inline-icon-small {
+  height: 0.9em; /* similar to 1.5ex in LaTeX */
+  vertical-align: middle; /* keeps icon aligned with text */
+  display: inline-block;
+}
+
+.inline-icon-large {
+  height: 1.2em;
+  vertical-align: middle;
+  display: inline-block;
+}
+
+/* --- Video-grid landing hero (template-style) --- */
+
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.video-grid {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  background: #000;
+  grid-template-columns: repeat(8, 1fr);
+  grid-template-rows: repeat(8, 1fr);
+  z-index: 1;
+
+  /* Optional: the template uses a zoom-out animation */
+  transform: scale(2);
+  transform-origin: center center;
+  animation: zoomOut 10s ease-in-out forwards;
+}
+
+@keyframes zoomOut {
+  0%, 50% {
+    transform: scale(2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.video-cell {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  aspect-ratio: 16/10;
+  object-position: top;  /* crop bottom */
+}
+
+.video-cell video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Readability overlay (matches template layering idea) */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+          135deg,
+          rgba(0, 0, 0, 0.45) 0%,
+          rgba(0, 0, 0, 0.30) 50%,
+          rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  width: 100%;
+}
+
+/* Make the Bulma hero inside the overlay transparent */
+.hero-section .hero.is-transparent {
+  background: transparent;
+}
+
+/* Mobile: fewer columns like the template */
+@media (max-width: 768px) {
+  .video-grid {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+}
+
+/* Optional: make arXiv / PDF buttons text stay white */
+.hero-section .button.is-dark {
+  color: #ffffff;
+}
+
+/* Optional: improve contrast slightly */
+.hero-section .publication-title {
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+}
+
+.interpolation-panel .interpolation-image {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.interpolation-video-column {
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+.interpolation-panel .slider {
+  margin: 0 !important;
+}
+
+#interpolation-image-wrapper {
+  width: 100%;
+}
+
+#interpolation-image-wrapper img {
+  border-radius: 5px;
+}

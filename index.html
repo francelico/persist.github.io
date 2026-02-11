@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="description"
+        content="Persistent Environment Representations for Simulating Interactive Space-Time (PERSIST),
+        a world model for complex and persistent 3D environments.">
+  <meta name="keywords" content="PERSIST, World Models, Generative Models">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>PERSIST: World Models with Persistent 3D State</title>
+
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-5HKE1DJQG1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'G-5HKE1DJQG1');
+  </script>
+
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-slider.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="./static/css/index.css">
+  <link rel="icon" href="./static/images/voxels.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+<body>
+
+
+<section class="hero-section">
+
+    <!-- Video Grid Background -->
+  <div class="video-grid">
+    <!-- Minimal version: 64 cells (8x8). Duplicate sources freely. -->
+    <!-- Tip: start with ~16 unique clips and repeat them to fill 64 cells. -->
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_010.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_015.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_018.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_024.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_026.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_027.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_028.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_029.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_030.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_031.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_032.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_035.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_036.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_037.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_041.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_042.mp4" type="video/mp4">
+  </video>
+</div>
+    <div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_010.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_015.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_018.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_024.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_026.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_027.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_028.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_029.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_030.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_031.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_032.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_035.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_036.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_037.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_041.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_042.mp4" type="video/mp4">
+  </video>
+</div>
+    <div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_010.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_015.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_018.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_024.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_026.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_027.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_028.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_029.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_030.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_031.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_032.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_035.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_036.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_037.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_041.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_042.mp4" type="video/mp4">
+  </video>
+</div>
+    <div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_010.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_015.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_018.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_024.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_026.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_027.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_028.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_029.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_030.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_031.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_032.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_035.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_036.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_037.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_041.mp4" type="video/mp4">
+  </video>
+</div>
+
+<div class="video-cell">
+  <video autoplay muted loop playsinline preload="none">
+    <source src="./static/videos/grid-temp/level_042.mp4" type="video/mp4">
+  </video>
+</div>
+    <!-- Repeat until you have 64 .video-cell elements. -->
+    <!-- Fast way: copy/paste blocks and cycle through your existing mp4s. -->
+    <!-- … -->
+  </div>
+
+  <!-- Dark gradient overlay for readability -->
+  <div class="hero-overlay"></div>
+
+  <div class="hero-content">
+    <section class="hero is-transparent">
+      <div class="hero-body">
+        <div class="container is-max-desktop">
+          <div class="columns is-centered">
+            <div class="column has-text-centered">
+              <h1 class="title is-1 publication-title">Beyond Pixel Context Windows: World Models with Persistent 3D State</h1>
+              <div class="is-size-5 publication-authors">
+                <span class="author-block">
+                  <a href="https://francelico.github.io/samuelgarcin.github.io/">Samuel Garcin</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://tom-m-walker.github.io/">Thomas Walker</a><sup>1</sup>,</span>
+                <span class="author-block">
+                  <a href="https://smcdonagh.github.io">Steven McDonagh</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://teapearce.github.io/">Tim Pearce</a><sup>2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://homepages.inf.ed.ac.uk/hbilen/">Hakan Bilen</a><sup>1</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://www.microsoft.com/en-us/research/people/tianyuhe/">Tianyu He</a><sup>2</sup>,
+                </span>
+                <span class="author-block">
+                  <a href="https://kaixin96.github.io/">Kaixin Wang</a><sup>2</sup>
+                </span>
+                <span class="author-block">
+                  <a href="https://sites.google.com/view/jiangbian">Jiang Bian</a><sup>2</sup>
+                </span>
+              </div>
+
+              <div class="is-size-5 publication-authors">
+                <span class="author-block"><sup>1</sup>University of Edinburgh,</span>
+                <span class="author-block"><sup>2</sup>Microsoft Research</span>
+              </div>
+
+              <div class="column has-text-centered">
+                <div class="publication-links">
+                  <!-- PDF Link. -->
+                  <span class="link-block">
+                    <a href="https://todo"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="fas fa-file-pdf"></i>
+                      </span>
+                      <span>Paper</span>
+                    </a>
+                  </span>
+                  <span class="link-block">
+                    <a href="https://todo"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="ai ai-arxiv"></i>
+                      </span>
+                      <span>arXiv</span>
+                    </a>
+                  </span>
+    <!--              &lt;!&ndash; Video Link. &ndash;&gt;-->
+    <!--              <span class="link-block">-->
+    <!--                <a href="https://todo"-->
+    <!--                   class="external-link button is-normal is-rounded is-dark">-->
+    <!--                  <span class="icon">-->
+    <!--                      <i class="fab fa-youtube"></i>-->
+    <!--                  </span>-->
+    <!--                  <span>Video</span>-->
+    <!--                </a>-->
+    <!--              </span>-->
+    <!--              &lt;!&ndash; Code Link. &ndash;&gt;-->
+    <!--              <span class="link-block">-->
+    <!--                <a href="https://todo"-->
+    <!--                   class="external-link button is-normal is-rounded is-dark">-->
+    <!--                  <span class="icon">-->
+    <!--                      <i class="fab fa-github"></i>-->
+    <!--                  </span>-->
+    <!--                  <span>Code</span>-->
+    <!--                  </a>-->
+    <!--              </span>-->
+    <!--              &lt;!&ndash; Dataset Link. &ndash;&gt;-->
+    <!--              <span class="link-block">-->
+    <!--                <a href="https://todo"-->
+    <!--                   class="external-link button is-normal is-rounded is-dark">-->
+    <!--                  <span class="icon">-->
+    <!--                      <i class="far fa-images"></i>-->
+    <!--                  </span>-->
+    <!--                  <span>Data</span>-->
+    <!--                  </a>-->
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+    <!-- Abstract. -->
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 section-title">Abstract</h2>
+        <div class="content has-text-justified">
+          <p>
+            Interactive world models continually generate video by responding to a user's actions, enabling open-ended generation capabilities.
+          </p>
+          <p>
+            However, existing models typically lack a 3D representation of the environment, meaning 3D consistency must be implicitly learned from data, and spatial memory is restricted to limited temporal context windows.
+            This results in an unrealistic user experience and presents significant obstacles to down-stream tasks such as training agents.
+          </p>
+          <p>
+            We present <span class="persist">PERSIST</span>, a new paradigm of world model which simulates the evolution of a latent 3D scene: <b>environment</b>, <b>camera</b>, and <b>renderer</b>.
+            This allows us to synthesize new frames with persistent spatial memory and consistent geometry.
+          </p>
+          <p>
+            Our approach achieves substantial improvements in spatial memory, 3D consistency, and long-horizon video generation quality over existing methods, producing coherent and evolving 3D worlds.
+          </p>
+        </div>
+      </div>
+    </div>
+    <!--/ Abstract. -->
+
+<!--    &lt;!&ndash; Paper video. &ndash;&gt;-->
+<!--    <div class="columns is-centered has-text-centered">-->
+<!--      <div class="column is-four-fifths">-->
+<!--        <h2 class="title is-3">Video</h2>-->
+<!--        <div class="publication-video">-->
+<!--          <iframe src="https://www.youtube.com/embed/todo"-->
+<!--                  frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>-->
+<!--        </div>-->
+<!--      </div>-->
+<!--    </div>-->
+    <!--/ Paper video. -->
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-title">Pixels are a poor choice for encoding world state information</h2>
+          <div class="content has-text-justified">
+            <p>
+              Within 3D environments, pixel observations provide partial, highly redundant, and viewpoint-dependent information about the world at a fixed point in time.
+            </p>
+
+            <p>
+              [Introduce 3D world state representation]
+            </p>
+          </div>
+        <!--   3D generation     -->
+        <h3 class="title is-4 section-title">Information Loss</h3>
+          <div class="content has-text-justified">
+            <p>
+              [Short explanation + Side-by-side comparison of Oasis and "with 3D state" (PERSIST)]
+            </p>
+            <p>
+              "with 3D state" should actually depict the 3D state too]
+            </p>
+          </div>
+
+        <h3 class="title is-4 section-title">Dynamics Oversimplification</h3>
+          <div class="content has-text-justified">
+            <p>
+              [Short explanation + Side-by-side comparison of Oasis (web) avoiding modeling out-of-view objects and "with 3D state" (PERSIST)]
+            </p>
+          </div>
+
+        <h3 class="title is-4 section-title">Poor Generalisation</h3>
+          <div class="content has-text-justified">
+            <p>
+              [Short explanation + Side-by-side comparison of WorldMem (key frame retrieval) and "with 3D state" (PERSIST)]
+            </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-title">Method</h2>
+        <img src="static/images/method.png" alt="PERSIST Method" class="method-image">
+        <div class="content has-text-justified">
+          <p>
+            Initialized with a single pixel frame, <span class="persist">PERSIST</span> evolves in a four-part
+            auto-regressive loop in response to user actions
+            <img src="./static/images/action.png" class="inline-icon-small" alt="Action icon">.
+            We first denoise the 3D environment centred on the agent in the form of
+            a latent <em>world-frame</em>
+            <img src="./static/images/voxels.png" class="inline-icon-large" alt="Voxel icon">.
+            Next, camera parameters
+            <img src="./static/images/camera.png" class="inline-icon" alt="Camera icon">
+            are predicted with a feed-forward transformer.
+            We then project the world to the camera plane to form a depth-ordered
+            stack of world latents
+            <img src="./static/images/voxel_frame.png" class="inline-icon" alt="Voxel frame icon">.
+            Finally, pixel latents
+            <img src="./static/images/pixel.png" class="inline-icon" alt="Pixel icon">
+            are diffused, conditioned on pixel-aligned 3D information from the world frame.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-title">New Capabilities</h2>
+        <!--   3D generation     -->
+        <h3 class="title is-4 section-title">3D World Generation</h3>
+          <div class="content has-text-justified">
+            <p>
+              [3x3 or 4x4 grid depicting w_0 being generated from an initial pixel frame, show each denoising step noise -> clean]
+            </p>
+            <p>
+              [Use a single pixel frame per row and show 3 or 4 possible w0 generations to highlight diversity and that there are many plausible worlds stemming from a single partial observation?]
+            </p>
+          </div>
+
+        <h3 class="title is-4 section-title">3D Initialisation and Editing</h3>
+          <div class="content has-text-justified">
+            <p>
+              [Highlight benefits of explicit 3D representation: 1) initialisation with a 3D scene rather than a single pixel frame, 2) editing the world state mid-episode
+            </p>
+          </div>
+
+        <h3 class="title is-4 section-title">Long-Term Spatial Memory</h3>
+          <div class="content has-text-justified">
+            <p>
+             [we cut this? we're already showing examples of this in the previous section]
+            </p>
+          </div>
+
+        <h3 class="title is-4 section-title">Emergence of Persistent World Dynamics</h3>
+          <div class="content has-text-justified">
+            <p>
+              [example of water flowing etc]
+            </p>
+          </div>
+
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section class="section">
+  <div class="container is-max-desktop">
+
+    <!-- Method. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3 section-title">Qualitative Comparison</h2>
+          <div class="content has-text-justified">
+            <p>
+             [PERSIST vs Oasis vs WorldMem side-by-side video comparison, each page shows episodes with similar biomes, same policy]
+            </p>
+          </div>
+      </div>
+    </div>
+
+    <div id="results-carousel" class="carousel results-carousel">
+      <div class="item item-steve">
+        <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-chair-tp">
+        <video poster="" id="chair-tp" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-shiba">
+        <video poster="" id="shiba" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-fullbody">
+        <video poster="" id="fullbody" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-blueshirt">
+        <video poster="" id="blueshirt" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-mask">
+        <video poster="" id="mask" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-coffee">
+        <video poster="" id="coffee" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+      <div class="item item-toby">
+        <video poster="" id="toby" autoplay controls muted loop playsinline height="100%">
+          <source src="./static/videos/grid-temp/level_042.mp4"
+                  type="video/mp4">
+        </video>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section" id="BibTeX">
+  <div class="container is-max-desktop content">
+    <h2 class="title">BibTeX</h2>
+    <pre><code>@article{todo,
+  author    = {todo},
+  title     = {todo},
+  journal   = {todo},
+  year      = {2026},
+}</code></pre>
+  </div>
+</section>
+
+
+<footer class="footer">
+  <div class="container">
+    <div class="content has-text-centered">
+      <a class="icon-link"
+         href="./static/videos/persist_paper.pdf">
+        <i class="fas fa-file-pdf"></i>
+      </a>
+      <a class="icon-link" href="https://todo" class="external-link" disabled>
+        <i class="fab fa-github"></i>
+      </a>
+    </div>
+    <div class="columns is-centered">
+      <div class="column is-8">
+        <div class="content">
+          <p>
+            This website is licensed under a <a rel="license"
+                                                href="http://creativecommons.org/licenses/by-sa/4.0/">Creative
+            Commons Attribution-ShareAlike 4.0 International License</a>.
+          </p>
+
+          <p>
+            You are free to share and adapt the materials on this website, provided
+            appropriate credit is given and any derivative work is distributed under
+            the same license.
+          </p>
+
+          <p>
+            Website template adapted from the
+            <a href="https://github.com/nerfies/nerfies.github.io">Nerfies project page template</a>.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
