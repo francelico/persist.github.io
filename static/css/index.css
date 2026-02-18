@@ -98,6 +98,11 @@ body {
   /*color: #4286f4;*/
 }
 
+.affil-num {
+  font-size: 0.7em;
+  vertical-align: super;
+}
+
 /*override all fonts to white when using a video grid*/
 .hero-section .publication-title,
 .hero-section .publication-authors,
@@ -187,19 +192,59 @@ body {
   justify-content: center;
 }
 
-.video-grid {
+/* Container holding the two half-width grids */
+.hero-section .video-grids {
   position: absolute;
   inset: 0;
-  display: grid;
-  background: #000;
-  grid-template-columns: repeat(8, 1fr);
-  grid-template-rows: repeat(8, 1fr);
   z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* stack horizontally */
+  /*grid-template-rows: 1fr 1fr;   !* stack vertically *!*/
+  /*grid-template-columns: 1fr;*/
+  background: #000;               /* fallback behind both grids */
 
   /* Optional: the template uses a zoom-out animation */
   transform: scale(2);
   transform-origin: center center;
   animation: zoomOut 10s ease-in-out forwards;
+}
+
+/* Each half-grid */
+.hero-section .video-grid {
+  width: 100%;
+  height: 100%;
+  display: grid;
+
+  /* Customisable per-grid */
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  grid-template-rows: repeat(var(--rows, 4), 1fr);
+
+  background: #000; /* hide any seams */
+}
+
+/* Cells + video styling (keeps “crop only width” + centered) */
+.hero-section .video-cell {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+  /*  aspect-ratio: 16/10;*/
+/*  object-position: top;  !* crop bottom *!*/
+}
+
+.hero-section .video-cell video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 100%;
+  width: auto;
+  min-width: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  display: block;
+
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  will-change: transform;
 }
 
 @keyframes zoomOut {
@@ -209,21 +254,6 @@ body {
   100% {
     transform: scale(1);
   }
-}
-
-.video-cell {
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  aspect-ratio: 16/10;
-  object-position: top;  /* crop bottom */
-}
-
-.video-cell video {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  display: block;
 }
 
 /* Readability overlay (matches template layering idea) */
