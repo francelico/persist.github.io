@@ -276,35 +276,34 @@
           <div class="container is-max-desktop">
             <div class="content has-text-justified">
               <p>
-                Within 3D environments, pixel observations provide partial, highly redundant, and viewpoint-dependent information about the world at a fixed point in time.
+                Within 3D environments, pixel observations provide partial, highly redundant, and viewpoint-dependent snapshots of the world. Could we instead model the environment directly in 3D, using a representation that evolves over time?
               </p>
 
-              <p>
-                [Introduce 3D world state representation]
-              </p>
+              <br>
             </div>
           </div>
         <!--   3D generation     -->
-        <h3 class="title is-4 section-title">Without a 3D state, spatial information is lost...</h3>
+        <h3 class="title is-4 section-title">&ldquo;Without a 3D state, spatial information is lost...</h3>
         <div class="container is-max-desktop">
           <div class="content has-text-justified">
             <p>
-              [Short explanation + Side-by-side comparison of Oasis and "with 3D state" (PERSIST)]
+              Pixel-based memory is expensive, limiting existing world models to a few seconds of visual memory. By maintaining a persistent 3D state, PERSIST enables efficient storage and retrieval of spatial information over extended horizons.
             </p>
+            <br>
           </div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
                 <!-- Left Side (33% width): w/o 3D state -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        Without 3D state
+                        Without 3D state (Oasis)
                     </h4>
 
                     <!-- Video 1 -->
                     <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
                           autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/oasis_web/meadow_look_up_down.webm" type="video/webm">
+                          <source src="./static/videos/oasis_web/meadow_look_up_down.mp4" type="video/mp4">
                       </video>
                     </div>
 
@@ -324,21 +323,16 @@
                 <!-- Right Side: (67% width: with 3D state) -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        With 3D state
+                        With 3D state (Ours)
                     </h4>
-                  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0rem; margin-bottom: 2rem;">
-                    <!-- Video 2a -->
-                    <video style="width: auto; height: 360px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); background: #000;"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/74/voxel.mp4" type="video/mp4">
-                    </video>
+                    <!-- Video 2 -->
 
-                    <!-- Video 2b -->
-                    <video style="width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/74/pixel.mp4" type="video/mp4">
-                    </video>
-                  </div>
+                    <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                          autoplay muted loop preload="metadata" controls>
+                          <source src="./static/videos/stacked_videos/74_stacked_h.mp4" type="video/mp4">
+                      </video>
+                    </div>
 
                     <!-- Two images below video -->
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
@@ -357,26 +351,33 @@
                 </div>
         </div>
 
-        <h3 class="title is-4 section-title">... and interactions with unseen objects are ignored.</h3>
+        <h3 class="title is-4 section-title">... and interactions with unseen objects are ignored.&rdquo;</h3>
         <div class="container is-max-desktop">
           <div class="content has-text-justified">
             <p>
-              [Short explanation + Side-by-side comparison of Oasis (web) avoiding modeling out-of-view objects and "with 3D state" (PERSIST)]
+              By providing a partial view of the environment, pixel-based histories make modelling certain environment dynamics inherently challenging. For example, modelling collisions with out-of-view objects become a stochastic process.
             </p>
+            <p>
+              We find that existing models tend to heavily prioritise the dominant mode of not modelling any object or elevation change behind the player as they move backwards.
+            </p>
+            <p>
+              In contrast, our 3D representation tracks space all around the player, allowing PERSIST to model a broader class of agent-environment interactions.
+            </p>
+            <br>
           </div>
         </div>
         <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
                 <!-- Left Side (33% width): w/o 3D state -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        Without 3D state
+                        Without 3D state (Oasis)
                     </h4>
 
                     <!-- Video 1 -->
                     <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
                           autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/oasis_web/walk_backwards.webm" type="video/webm">
+                          <source src="./static/videos/oasis_web/walk_backwards.mp4" type="video/mp4">
                       </video>
                     </div>
 
@@ -385,20 +386,13 @@
                 <!-- Right Side: (67% width: with 3D state) -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        With 3D state
+                        With 3D state (Ours)
                     </h4>
-                  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0rem; margin-bottom: 2rem;">
-                    <!-- Video 2a -->
-                    <video style="width: auto; height: 360px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); background: #000;"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4">
-                    </video>
-
-                    <!-- Video 2b -->
-                    <video style="width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4">
-                    </video>
+                  <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                          autoplay muted loop preload="metadata" controls>
+                          <source src="./static/videos/stacked_videos/94_stacked_h.mp4" type="video/mp4">
+                      </video>
                   </div>
 
 
@@ -406,24 +400,33 @@
                 </div>
         </div>
 
-        <h3 class="title is-4 section-title">Key-frame retrieval techniques generalise poorly to new spatial locations</h3>
+        <h3 class="title is-4 section-title">Key-frame retrieval struggles to generalize beyond past observations</h3>
           <div class="container is-max-desktop">
             <div class="content has-text-justified">
               <p>
-                [Short explanation + Side-by-side comparison of WorldMem (key frame retrieval) and "with 3D state" (PERSIST)]
+                Key-frame retrieval methods construct their context by selecting frames from the full generation history, choosing those that appear most spatially and temporally relevant.
               </p>
+
+              <p>
+                However, retrieval fundamentally relies on past observations as a proxy for spatial memory. As the agent explores new regions or revisits scenes from novel viewpoints, suitable frames may not exist in memory, causing an immediate degradation in visual quality and spatial consistency.
+              </p>
+
+              <p>
+                PERSIST takes a fundamentally different approach. Rather than retrieving spatial information from past frames, it maintains a 3D representation that is actively regenerated at each timestep. As the agent moves, this representation evolves to reflect the current state of the world, enabling consistent spatial reasoning without relying on an ever-growing archive of past observations.
+              </p>
+              <br>
             </div>
           </div>
         <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
                 <!-- Left Side (33% width): w/o 3D state -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        Without 3D state
+                        Key-frame retrieval (WorldMem)
                     </h4>
 
                     <!-- Video 1 -->
                     <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
                           autoplay muted loop preload="metadata" controls>
                           <source src="./static/videos/worldmem/plains_000007.mp4" type="video/mp4">
                       </video>
@@ -434,20 +437,13 @@
                 <!-- Right Side: (67% width: with 3D state) -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        With 3D state
+                        With 3D state (Ours)
                     </h4>
-                  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0rem; margin-bottom: 2rem;">
-                    <!-- Video 2a -->
-                    <video style="width: auto; height: 360px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); background: #000;"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4">
-                    </video>
-
-                    <!-- Video 2b -->
-                    <video style="width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4">
-                    </video>
+                  <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                          autoplay muted loop preload="metadata" controls>
+                          <source src="./static/videos/stacked_videos/keyframe_stacked_h.mp4" type="video/mp4">
+                      </video>
                   </div>
                 </div>
         </div>
@@ -500,51 +496,59 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-title">New Capabilities</h2>
+        <p>In addition to its improvement to the quality and coherence of generated experiences, we find that PERSIST's 3D representation confers a number of new capabilities.</p>
+        <br>
         <!--   3D generation     -->
         <h3 class="title is-4 section-title">3D World Generation</h3>
           <div class="content has-text-justified">
             <p>
-              [3x3 or 4x4 grid depicting w_0 being generated from an initial pixel frame, show each denoising step noise -> clean]
+              As a generative approach, our world-frame flow matching model supports generating diverse world states from a single RGB frame at initialisation.
+              We show below the iterative denoising of the initial world frame over 20 denoising steps.
+              Each row corresponds to a different RGB frame and each column corresponds to a different generation seed.
             </p>
-            <p>
-              [Use a single pixel frame per row and show 3 or 4 possible w0 generations to highlight diversity and that there are many plausible worlds stemming from a single partial observation?]
-            </p>
+            <br>
           </div>
 
-        <h3 class="title is-4 section-title">3D Initialisation and Editing</h3>
+        <h3 class="title is-4 section-title">3D Initialisation</h3>
           <div class="content has-text-justified">
             <p>
-              [Highlight benefits of explicit 3D representation: 1) initialisation with a 3D scene rather than a single pixel frame, 2) editing the world state mid-episode
+              Alternatively, we can leverage direct access to an explicit 3D representation to directly provide the model with 3D data.
+              This explicit 3D conditioning allows a greater degree of control over the generated experience than providing an image, as the full surroundings of the agent can be specified.
+              Here we show how closely PERSIST follows ground truth rollouts when it receives a ground truth world frame at initialisation.
             </p>
+            <br>
           </div>
 
-        <h3 class="title is-4 section-title">Long-Term Spatial Memory</h3>
+        <h3 class="title is-4 section-title">Dynamic World Editing</h3>
           <div class="content has-text-justified">
             <p>
-             [add 600-frame rollout(s)]
+              Our explicit 3D representation allows us to directly edit the world state mid-generation, enabling a new form of dynamic world editing that occurs directly in 3D space.
+              We provide some examples below.
+            </p>
+            <br>
+          </div>
+
+        <h3 class="title is-4 section-title">Stable Extended Generations</h3>
+          <div class="content has-text-justified">
+            <p>
+             Similarly to other autogressive models, PERSIST experiences visual artifacts induced by auto-regressive drift.
+              However, we find that our 3D representation is inherently more stable and resistant to drift.
+              As such, visual artifacts tend to recede when the model retrieves information from its 3D representation (e.g. when rotating the camera), making it possible to maintain stability over extended horizons.
             </p>
           </div>
-        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
-                  <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 0rem; margin-bottom: 2rem;">
-                    <!-- Video 2a -->
-                    <video style="width: auto; height: 360px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1); background: #000;"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4">
-                    </video>
-
-                    <!-- Video 2b -->
-                    <video style="width: 100%; height: 360px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                        autoplay muted loop preload="metadata" controls>
-                        <source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4">
-                    </video>
-                  </div>
-        </div>
+          <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+              <video style="display:block; object-position: bottom; width: 100%; height: 338px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                  autoplay muted loop preload="metadata" controls>
+                  <source src="./static/videos/stacked_videos/long_stacked_h.mp4" type="video/mp4">
+              </video>
+          </div>
 
         <h3 class="title is-4 section-title">Emergence of Persistent World Dynamics</h3>
           <div class="content has-text-justified">
             <p>
-              [example of water flowing etc]
+              PERSIST continuously models dynamic processes in the environment, even while they are not being actively rendered to screen space. Here, we show a waterfall that is gradually flooding the area, causing water to eventually appear in the player's view.
             </p>
+            <br>
           </div>
 
       </div>
@@ -561,11 +565,6 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-title">More Results</h2>
-          <div class="content has-text-justified">
-            <p>
-             [PERSIST vs Oasis vs WorldMem side-by-side video comparison, each page shows episodes with similar biomes, same policy]
-            </p>
-          </div>
       </div>
     </div>
 
