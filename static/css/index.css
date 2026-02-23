@@ -298,6 +298,15 @@ body {
   text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
+.hint {
+    text-align: center;
+    color: #444444;
+    font-size: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
 .interpolation-panel .interpolation-image {
   width: 100%;
   border-radius: 5px;

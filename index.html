@@ -176,6 +176,16 @@
                       <span>Paper</span>
                     </a>
                   </span>
+                  <!-- Code Link. -->
+                  <span class="link-block">
+                    <a href="https://todo"
+                       class="external-link button is-normal is-rounded is-dark">
+                      <span class="icon">
+                          <i class="fab fa-github"></i>
+                      </span>
+                      <span>Code</span>
+                      </a>
+                  </span>
                   <span class="link-block">
                     <a href="https://todo"
                        class="external-link button is-normal is-rounded is-dark">
@@ -194,16 +204,6 @@
     <!--                  </span>-->
     <!--                  <span>Video</span>-->
     <!--                </a>-->
-    <!--              </span>-->
-    <!--              &lt;!&ndash; Code Link. &ndash;&gt;-->
-    <!--              <span class="link-block">-->
-    <!--                <a href="https://todo"-->
-    <!--                   class="external-link button is-normal is-rounded is-dark">-->
-    <!--                  <span class="icon">-->
-    <!--                      <i class="fab fa-github"></i>-->
-    <!--                  </span>-->
-    <!--                  <span>Code</span>-->
-    <!--                  </a>-->
     <!--              </span>-->
     <!--              &lt;!&ndash; Dataset Link. &ndash;&gt;-->
     <!--              <span class="link-block">-->
@@ -311,11 +311,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Initial View</p>
-                            <img src="./static/videos/oasis_web/meadow_start.png" alt="Initial View 1" style="object-fit: contain; width: 100%; height: 180px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <img src="./static/images/revisit/meadow_start.png" alt="Initial View 1" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
                         </div>
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Revisit View</p>
-                            <img src="./static/videos/oasis_web/meadow_revisit.png" alt="Revisit View 1" style="object-fit: contain; width: 100%; height: 180px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <img src="./static/images/revisit/meadow_revisit.png" alt="Revisit View 1" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
                         </div>
                     </div>
                 </div>
@@ -338,11 +338,11 @@
                     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Initial View</p>
-                            <img src="./static/images/revisit/rollout74_start.png" alt="Initial View 2" style="object-fit: contain; width: 100%; height: 180px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <img src="./static/images/revisit/rollout74_start.png" alt="Initial View 2" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
                         </div>
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Revisit View</p>
-                            <img src="./static/images/revisit/rollout74_revisit.png" alt="Revisit View 2" style="object-fit: contain; width: 100%; height: 180px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1);">
+                            <img src="./static/images/revisit/rollout74_revisit.png" alt="Revisit View 2" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
                         </div>
                     </div>
 
@@ -366,38 +366,32 @@
             <br>
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
-                <!-- Left Side (33% width): w/o 3D state -->
-                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
-                    <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        Without 3D state (Oasis)
-                    </h4>
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+          <!-- Left Side -->
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+              <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                  Without 3D state (Oasis)
+              </h4>
 
-                    <!-- Video 1 -->
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                          autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/oasis_web/walk_backwards.mp4" type="video/mp4">
-                      </video>
-                    </div>
+              <!-- Video 1 -->
+                <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                    autoplay muted loop preload="metadata" controls>
+                    <source src="./static/videos/oasis_web/walk_backwards.mp4" type="video/mp4">
+                </video>
+          </div>
 
-                </div>
+          <!-- Right Side -->
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+              <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                  With 3D state (Ours)
+              </h4>
 
-                <!-- Right Side: (67% width: with 3D state) -->
-                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
-                    <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        With 3D state (Ours)
-                    </h4>
-                  <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                          autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/stacked_videos/94_stacked_h.mp4" type="video/mp4">
-                      </video>
-                  </div>
-
-
-
-                </div>
+              <!-- Video 2 -->
+              <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                  autoplay muted loop preload="metadata" controls>
+                  <source src="./static/videos/stacked_videos/94_stacked_h.mp4" type="video/mp4">
+              </video>
+          </div>
         </div>
 
         <h3 class="title is-4 section-title">Key-frame retrieval struggles to generalize beyond past observations</h3>
@@ -417,37 +411,33 @@
               <br>
             </div>
           </div>
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
-                <!-- Left Side (33% width): w/o 3D state -->
-                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
-                    <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        Key-frame retrieval (WorldMem)
-                    </h4>
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+          <!-- Left Side -->
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+              <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                  Key-frame retrieval (WorldMem)
+              </h4>
 
-                    <!-- Video 1 -->
-                    <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                          autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/worldmem/plains_000007.mp4" type="video/mp4">
-                      </video>
-                    </div>
+              <!-- Video 1 -->
+                <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                    autoplay muted loop preload="metadata" controls>
+                    <source src="./static/videos/worldmem/plains_000007.mp4" type="video/mp4">
+                </video>
+          </div>
 
-                </div>
+          <!-- Right Side -->
+          <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+              <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                  With 3D state (Ours)
+              </h4>
 
-                <!-- Right Side: (67% width: with 3D state) -->
-                <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
-                    <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
-                        With 3D state (Ours)
-                    </h4>
-                  <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                          autoplay muted loop preload="metadata" controls>
-                          <source src="./static/videos/stacked_videos/keyframe_stacked_h.mp4" type="video/mp4">
-                      </video>
-                  </div>
-                </div>
+              <!-- Video 2 -->
+              <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                  autoplay muted loop preload="metadata" controls>
+                  <source src="./static/videos/stacked_videos/keyframe_stacked_h.mp4" type="video/mp4">
+              </video>
+          </div>
         </div>
-
       </div>
     </div>
 
@@ -490,11 +480,10 @@
 </section>
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-fullhd">
 
     <!-- Method. -->
-    <div class="columns is-centered">
-      <div class="column is-full-width">
+    <div class="container is-max-desktop">
         <h2 class="title is-3 section-title">New Capabilities</h2>
         <p>In addition to its improvement to the quality and coherence of generated experiences, we find that PERSIST's 3D representation confers a number of new capabilities.</p>
         <br>
@@ -502,13 +491,45 @@
         <h3 class="title is-4 section-title">3D World Generation</h3>
           <div class="content has-text-justified">
             <p>
-              As a generative approach, our world-frame flow matching model supports generating diverse world states from a single RGB frame at initialisation.
-              We show below the iterative denoising of the initial world frame over 20 denoising steps.
-              Each row corresponds to a different RGB frame and each column corresponds to a different generation seed.
+              As a generative approach, our world-frame flow matching model can produce diverse plausible world states from a single RGB observation at initialisation.
+              Below, we visualise the iterative denoising of the world frame over 20 denoising steps.
+              Each row corresponds to a specific input RGB frame, while each column shows a distinct sample generated using a different random seed.
             </p>
+            <p>
+              Despite starting from the same image, the model produces a range of distinct yet consistent world completions.
+              These samples preserve the structure and semantics of the original view while filling in unseen regions in different plausible ways.
+              This ability allows PERSIST to generate diverse and coherent environments, supporting a wide variety of interactive experiences.            </p>
             <br>
           </div>
+    </div>
+    <div class="container is-fullhd">
+        <div style="display: grid; grid-template-columns: 1fr 4fr; gap: 1rem; margin-bottom: 2rem;">
+            <div style="margin-top : 1rem;">
+                <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 1rem; text-align: center;">
+                Initial condition
+                </h4>
 
+<!-- todo: add whitespace outside of this so we can round the edges             <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: cover; width: auto; height: 310px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">-->
+               <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
+               <img src="./static/images/denoising_grid/a206.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
+               <img src="./static/images/denoising_grid/e0bf.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
+               <img src="./static/images/denoising_grid/e222.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
+
+            </div>
+            <div style="margin-top : 1rem;">
+               <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 1rem; text-align: center;">
+                Generated initial world frame (3 rollouts, 20 denoising steps)
+                </h4>
+              <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover;"
+                  autoplay muted loop preload="metadata" controls>
+                  <source src="./static/videos/denoising/denoising_grid.mp4" type="video/mp4">
+              </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- 3D Init. -->
+    <div class="container is-max-desktop">
         <h3 class="title is-4 section-title">3D Initialisation</h3>
           <div class="content has-text-justified">
             <p>
@@ -518,40 +539,132 @@
             </p>
             <br>
           </div>
+    </div>
+    <div class="container is-fullhd">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+        <!-- Left Side -->
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+            <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                Ground Truth
+            </h4>
 
-        <h3 class="title is-4 section-title">Dynamic World Editing</h3>
-          <div class="content has-text-justified">
-            <p>
-              Our explicit 3D representation allows us to directly edit the world state mid-generation, enabling a new form of dynamic world editing that occurs directly in 3D space.
-              We provide some examples below.
-            </p>
-            <br>
-          </div>
-
-        <h3 class="title is-4 section-title">Stable Extended Generations</h3>
-          <div class="content has-text-justified">
-            <p>
-             Similarly to other autogressive models, PERSIST experiences visual artifacts induced by auto-regressive drift.
-              However, we find that our 3D representation is inherently more stable and resistant to drift.
-              As such, visual artifacts tend to recede when the model retrieves information from its 3D representation (e.g. when rotating the camera), making it possible to maintain stability over extended horizons.
-            </p>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-              <video style="display:block; object-position: bottom; width: 100%; height: 338px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+            <!-- Video 1 -->
+              <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
                   autoplay muted loop preload="metadata" controls>
-                  <source src="./static/videos/stacked_videos/long_stacked_h.mp4" type="video/mp4">
+                  <source src="./static/videos/stacked_videos/voxel_init_stacked_gt.mp4" type="video/mp4">
               </video>
-          </div>
+        </div>
 
-        <h3 class="title is-4 section-title">Emergence of Persistent World Dynamics</h3>
-          <div class="content has-text-justified">
-            <p>
-              PERSIST continuously models dynamic processes in the environment, even while they are not being actively rendered to screen space. Here, we show a waterfall that is gradually flooding the area, causing water to eventually appear in the player's view.
-            </p>
-            <br>
-          </div>
+        <!-- Right Side -->
+        <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
+            <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
+                3D Conditioning
+            </h4>
 
+            <!-- Video 2 -->
+              <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                  autoplay muted loop preload="metadata" controls>
+                  <source src="./static/videos/stacked_videos/voxel_init_stacked.mp4" type="video/mp4">
+              </video>
+        </div>
       </div>
+    </div>
+
+    <br>
+
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 section-title">Dynamic World Editing</h3>
+        <div class="content has-text-justified">
+          <p>
+            Our explicit 3D representation allows us to directly edit the world state mid-generation, enabling a new form of dynamic world editing that occurs directly in 3D space.
+            We provide some examples below.
+          </p>
+          <br>
+        </div>
+    </div>
+
+    <div class="hint">
+            💡 Tip: Click on the arrows on either side to scroll through different edits.
+    </div>
+
+    <div class="container is-fullhd">
+      <div id="results-carousel" class="carousel results-carousel">
+        <div class="item item-noedit">
+          <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center;">
+                No edits
+          </h4>
+          <img src="./static/images/orig.png" alt="No Edits" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
+          <video poster="" id="noedit" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stacked_videos/no_edits.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-desert">
+          <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center;">
+                Add desert at frame 20
+          </h4>
+          <img src="./static/images/qual_q2.png" alt="Desert Quad" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
+          <video poster="" id="desert" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stacked_videos/edit_quad_desert.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-hill">
+          <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center;">
+                Add hill at frame 20
+          </h4>
+          <img src="./static/images/qual_q1.png" alt="Hill Quad" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
+          <video poster="" id="hill" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stacked_videos/edit_quad_hill.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+        <div class="item item-tree">
+          <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center;">
+                Add tree at frame 20
+          </h4>
+          <img src="./static/images/qual_s.png" alt="Tree" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
+          <video poster="" id="edit_tree" autoplay controls muted loop playsinline height="100%">
+            <source src="./static/videos/stacked_videos/edit_tree.mp4"
+                    type="video/mp4">
+          </video>
+        </div>
+      </div>
+      <br>
+      <br>
+    </div>
+
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 section-title">Stable Extended Generations</h3>
+        <div class="content has-text-justified">
+          <p>
+           Similarly to other autogressive models, PERSIST experiences visual artifacts induced by auto-regressive drift.
+            However, we find that our 3D representation is inherently more stable and resistant to drift.
+            As such, visual artifacts tend to recede when the model retrieves information from its 3D representation (e.g. when rotating the camera), making it possible to maintain stability over extended horizons.
+          </p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+            <video style="display:block; object-position: bottom; width: 100%; height: 338px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                autoplay muted loop preload="metadata" controls>
+                <source src="./static/videos/stacked_videos/long_stacked_h.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
+    <br>
+
+    <div class="container is-max-desktop">
+      <h3 class="title is-4 section-title">Emergence of Persistent World Dynamics</h3>
+        <div class="content has-text-justified">
+          <p>
+            PERSIST continuously models dynamic processes in the environment, even while they are not being actively rendered to screen space. Here, we show a waterfall that is gradually flooding the area, causing water to eventually appear in the player's view.
+          </p>
+        </div>
+        <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
+            <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                autoplay muted loop preload="metadata" controls>
+                <source src="./static/videos/stacked_videos/waterfall_stacked_h.mp4" type="video/mp4">
+            </video>
+        </div>
     </div>
 
   </div>
@@ -568,7 +681,7 @@
       </div>
     </div>
 
-    <div id="results-carousel" class="carousel results-carousel">
+    <div id="edits-carousel" class="carousel results-carousel">
       <div class="item item-steve">
         <video poster="" id="steve" autoplay controls muted loop playsinline height="100%">
           <source src="./static/videos/grid-temp/level_042.mp4"
