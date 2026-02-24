@@ -1,0 +1,1 @@
+From https://wandb.ai/samuel-garcin-research-projects/voxel_wm/runs/persist260k-xl-novox-1x4gpu-sing-free_play_no_jump_and_look_around-uid-52ed53ad?nw=nwuserfrancelico

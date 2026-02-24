@@ -13,10 +13,27 @@ body {
   margin-bottom: 5px;
 }
 
+/*.persist {*/
+/*  font-variant: small-caps;*/
+/*}*/
+
+/*.persist {*/
+/*  font-family: "Orbitron", sans-serif;*/
+/*  font-weight: 600;*/
+/*  letter-spacing: 0.08em;*/
+/*}*/
+
 .persist {
-  font-variant: small-caps;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0.04em;
 }
 
+/*.persist {*/
+/*  font-family: "Montserrat", sans-serif;*/
+/*  font-weight: 700;*/
+/*  letter-spacing: 0.03em;*/
+/*}*/
 
 .teaser .hero-body {
   padding-top: 0;
@@ -192,68 +209,57 @@ body {
   justify-content: center;
 }
 
-/* Container holding the two half-width grids */
-.hero-section .video-grids {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: grid;
-  grid-template-columns: 1fr 1fr; /* stack horizontally */
-  /*grid-template-rows: 1fr 1fr;   !* stack vertically *!*/
-  /*grid-template-columns: 1fr;*/
-  background: #000;               /* fallback behind both grids */
-
-  /* Optional: the template uses a zoom-out animation */
-  transform: scale(2);
-  transform-origin: center center;
-  animation: zoomOut 10s ease-in-out forwards;
+.hero-section .video-grids{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#000;
 }
 
-/* Each half-grid */
-.hero-section .video-grid {
-  width: 100%;
-  height: 100%;
-  display: grid;
+/* each half: clips the zoom so it cannot bleed into the other column */
+.hero-section .video-half{
+  position:relative;
+  overflow:hidden;          /* key */
+  contain: paint;           /* optional but helpful */
+  background:#000;
+}
 
-  /* Customisable per-grid */
+/* THIS element is both the grid AND the animated thing */
+.hero-section .video-grid{
+  width:100%;
+  height:100%;
+  display:grid;
   grid-template-columns: repeat(var(--cols, 4), 1fr);
   grid-template-rows: repeat(var(--rows, 4), 1fr);
 
-  background: #000; /* hide any seams */
-}
-
-/* Cells + video styling (keeps “crop only width” + centered) */
-.hero-section .video-cell {
-  position: relative;
-  overflow: hidden;
-  background: #000;
-  /*  aspect-ratio: 16/10;*/
-/*  object-position: top;  !* crop bottom *!*/
-}
-
-.hero-section .video-cell video {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 100%;
-  width: auto;
-  min-width: 100%;
-  transform: translate(-50%, -50%);
-  object-fit: cover;
-  display: block;
-
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  transform-origin:50% 50%;
+  animation: zoomOut 10s ease-in-out forwards;
   will-change: transform;
 }
 
-@keyframes zoomOut {
-  0%, 50% {
-    transform: scale(2);
-  }
-  100% {
-    transform: scale(1);
-  }
+/* cell + video */
+.hero-section .video-cell{
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
+
+.hero-section .video-cell video{
+  width:100%;
+  height:100%;
+  object-fit:cover;     /* or cover */
+  display:block;
+}
+
+@keyframes zoomOut{
+  0%,50%{ transform: scale(2); }
+  100%{  transform: scale(1); }
+}
+
+@keyframes zoomOut2{
+  0%,50%{ transform: scale(1); }
+  100%{  transform: scale(1.45); }
 }
 
 /* Readability overlay (matches template layering idea) */

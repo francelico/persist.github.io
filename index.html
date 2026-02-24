@@ -7,7 +7,7 @@
         a world model for complex and persistent 3D environments.">
   <meta name="keywords" content="PERSIST, World Models, Generative Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>PERSIST: World Models with Persistent 3D State</title>
+  <title><span class="persist">PERSIST</span>: World Models with Persistent 3D State</title>
 
 
   <!-- Google tag (gtag.js) -->
@@ -23,6 +23,9 @@
 
   <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
         rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="./static/css/bulma.min.css">
   <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
@@ -46,73 +49,89 @@
 
   <div class="video-grids">
   <!-- Left half grid -->
-  <div class="video-grid left" style="--cols: 4; --rows: 4;">
-    <!-- Paste 16 cells here (4x4) -->
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/voxel.mp4" type="video/mp4"></video></div>
-
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/voxel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/voxel.mp4" type="video/mp4"></video></div>
-
-  </div>
-
-<!--  <div class="video-grid left" style="&#45;&#45;cols: 1; &#45;&#45;rows: 1;">-->
+<!--  <div class="video-grid left" style="&#45;&#45;cols: 4; &#45;&#45;rows: 4;">-->
 <!--    &lt;!&ndash; Paste 16 cells here (4x4) &ndash;&gt;-->
-<!--    <div class="video-cell" style="object-position: center;"><video style="object-fit: contain;" autoplay muted loop playsinline preload="none"><source src="./static/videos/combined_xy_apart.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/voxel.mp4" type="video/mp4"></video></div>-->
+
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/voxel.mp4" type="video/mp4"></video></div>-->
+<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/voxel.mp4" type="video/mp4"></video></div>-->
+
 <!--  </div>-->
 
-  <!-- Right half grid -->
-  <div class="video-grid right" style="--cols: 4; --rows: 8;">
-    <!-- Paste 32 cells here (4x8) -->
-    <!--    todo: replace this bloc with new videos -->
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/pixel.mp4" type="video/mp4"></video></div>
+  <div class="video-half left" style="animation: zoomOut2 10s ease-in-out forwards;">
+    <!-- Paste 1 single video cell here (4x4) -->
+    <div class="video-grid" style="--cols: 1; --rows: 1;">
+      <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="none"><source src="./static/videos/isometric_comp_xy.mp4" type="video/mp4"></video></div>
+    </div>
+  </div>
 
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/pixel.mp4" type="video/mp4"></video></div>
+  <div class="video-half right">
+    <!-- Paste 1 single video cell here (4x4) -->
+<!--    <div class="video-grid" style="&#45;&#45;cols: 1; &#45;&#45;rows: 1;">-->
+<!--      <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="none"><source src="./static/videos/isometric_comp_xz.mp4" type="video/mp4"></video></div>-->
+<!--    </div>-->
 
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/pixel.mp4" type="video/mp4"></video></div>
+      <!-- Right half grid -->
+    <div class="video-grid" style="--cols: 4; --rows: 8;">
+      <!-- Paste 32 cells here (4x8) -->
+      <!--    todo: replace this bloc with new videos -->
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/010.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/063.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/080.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/010.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/e56c1cefc97c07bc9fed53cb6549b271f59a22544631bc419cff6939b7410d44.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/a42f20b218e2aeb8280cff26b4a7d60de633d0368213603680ce02f1ebea5549.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/a42f20b218e2aeb8280cff26b4a7d60de633d0368213603680ce02f1ebea5549.mp4" type="video/mp4"></video></div>
 
-    <!--    todo: replace this bloc with new videos -->
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/pixel.mp4" type="video/mp4"></video></div>
-    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/pixel.mp4" type="video/mp4"></video></div>
+
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/pixel.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/001.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/004.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/006.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/009.mp4" type="video/mp4"></video></div>
+
+      <!--    todo: replace this bloc with new videos -->
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/012.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/019.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/023.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/026.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/049.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/054.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/5bdc839fe8e691ddc25a3e1503aab1339b6d72be1278a692771a119d5a114811.mp4" type="video/mp4"></video></div>
+      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/6b39f304d45c67f17402442a7ca3c82521d8cbb924739fe18c1d077463313f40.mp4" type="video/mp4"></video></div>
+      <!--dropped-->
+      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/pixel.mp4" type="video/mp4"></video></div> !-->
+      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/pixel.mp4" type="video/mp4"></video></div> !-->
+      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/pixel.mp4" type="video/mp4"></video></div> !-->
+      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/pixel.mp4" type="video/mp4"></video></div> !-->
+
+    </div>
+
 
   </div>
   </div>
@@ -126,12 +145,12 @@
         <div class="container is-max-desktop">
           <div class="columns is-centered">
             <div class="column has-text-centered">
-              <h1 class="title is-1 publication-title">Beyond Pixel Context Windows: <br> World Models with Persistent 3D State</h1>
+              <h1 class="title is-1 publication-title">Beyond Pixel Histories:<br>World Models with Persistent 3D State</h1>
               <div class="is-size-5 publication-authors">
                 <span class="author-block">
-                  <a href="https://francelico.github.io/samuelgarcin.github.io/">Samuel Garcin</a><sup class="affil-num">1</sup><sup>†</sup>,</span>
+                  <a href="https://francelico.github.io/samuelgarcin.github.io/">Samuel Garcin</a><sup>*</sup><sup class="affil-num">1</sup><sup>†</sup>,</span>
                 <span class="author-block">
-                  <a href="https://tom-m-walker.github.io/">Thomas Walker</a><sup class="affil-num">1</sup><sup>†</sup>,</span>
+                  <a href="https://tom-m-walker.github.io/">Thomas Walker</a><sup>*</sup><sup class="affil-num">1</sup><sup>†</sup>,</span>
                 <span class="author-block">
                   <a href="https://smcdonagh.github.io">Steven McDonagh</a><sup class="affil-num">1</sup>,
                 </span>
@@ -160,6 +179,8 @@
                 <br>
                 <span class="author-block"><sup>†</sup>Corresponding Authors,</span>
                 <span class="author-block"><sup>‡</sup>Team Lead</span>
+                <br>
+                <span class="author-block">*Equal Contribution</span>
                 <br>
                 <br>
               </div>
@@ -235,16 +256,11 @@
         <div class="content has-text-justified">
           <p>
             Interactive world models continually generate video by responding to a user's actions, enabling open-ended generation capabilities.
-          </p>
-          <p>
             However, existing models typically lack a 3D representation of the environment, meaning 3D consistency must be implicitly learned from data, and spatial memory is restricted to limited temporal context windows.
             This results in an unrealistic user experience and presents significant obstacles to down-stream tasks such as training agents.
-          </p>
           <p>
             We present <span class="persist">PERSIST</span>, a new paradigm of world model which simulates the evolution of a latent 3D scene: <b>environment</b>, <b>camera</b>, and <b>renderer</b>.
             This allows us to synthesize new frames with persistent spatial memory and consistent geometry.
-          </p>
-          <p>
             Our approach achieves substantial improvements in spatial memory, 3D consistency, and long-horizon video generation quality over existing methods, producing coherent and evolving 3D worlds.
           </p>
         </div>
@@ -283,11 +299,11 @@
             </div>
           </div>
         <!--   3D generation     -->
-        <h3 class="title is-4 section-title">&ldquo;Without a 3D state, spatial information is lost...</h3>
+        <h3 class="title is-4 section-title">Without a 3D state, spatial information is lost...</h3>
         <div class="container is-max-desktop">
           <div class="content has-text-justified">
             <p>
-              Pixel-based memory is expensive, limiting existing world models to a few seconds of visual memory. By maintaining a persistent 3D state, PERSIST enables efficient storage and retrieval of spatial information over extended horizons.
+              Pixel-based memory is expensive, limiting existing world models to a few seconds of visual memory. By maintaining a persistent 3D state, <span class="persist">PERSIST</span> enables efficient retrieval of spatial information over extended horizons.
             </p>
             <br>
           </div>
@@ -328,7 +344,7 @@
                     <!-- Video 2 -->
 
                     <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
-                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
+                      <video style="display:block; object-position: bottom; width: 100%; height: 312px; object-fit: contain; border-radius: 8px;"
                           autoplay muted loop preload="metadata" controls>
                           <source src="./static/videos/stacked_videos/74_stacked_h.mp4" type="video/mp4">
                       </video>
@@ -351,17 +367,12 @@
                 </div>
         </div>
 
-        <h3 class="title is-4 section-title">... and interactions with unseen objects are ignored.&rdquo;</h3>
+        <h3 class="title is-4 section-title">... and interactions with unseen objects are ignored.</h3>
         <div class="container is-max-desktop">
           <div class="content has-text-justified">
             <p>
-              By providing a partial view of the environment, pixel-based histories make modelling certain environment dynamics inherently challenging. For example, modelling collisions with out-of-view objects become a stochastic process.
-            </p>
-            <p>
-              We find that existing models tend to heavily prioritise the dominant mode of not modelling any object or elevation change behind the player as they move backwards.
-            </p>
-            <p>
-              In contrast, our 3D representation tracks space all around the player, allowing PERSIST to model a broader class of agent-environment interactions.
+              By providing a partial view of the environment, pixel-based histories make modelling interactions with out-of-view objects difficult. We find that existing models tend to ignore these interactions, instead predicting flat, uniform terrain behind the player as they move backwards.
+              In contrast, our 3D representation tracks space all around the player, allowing <span class="persist">PERSIST</span> to model a broader class of agent-environment interactions.
             </p>
             <br>
           </div>
@@ -398,15 +409,11 @@
           <div class="container is-max-desktop">
             <div class="content has-text-justified">
               <p>
-                Key-frame retrieval methods construct their context by selecting frames from the full generation history, choosing those that appear most spatially and temporally relevant.
+                Key-frame retrieval methods construct their context by selecting spatially and temporally relevant frames from the full history. However, retrieval usually necessitates warm-starting the generation pipeline with hundred of ground truth pixel observations, and relies on these observations as a proxy for spatial memory. Exploring new regions or revisiting a scene from a new viewpoint often causes an immediate degradation in visual quality and spatial consistency.
               </p>
 
               <p>
-                However, retrieval fundamentally relies on past observations as a proxy for spatial memory. As the agent explores new regions or revisits scenes from novel viewpoints, suitable frames may not exist in memory, causing an immediate degradation in visual quality and spatial consistency.
-              </p>
-
-              <p>
-                PERSIST takes a fundamentally different approach. Rather than retrieving spatial information from past frames, it maintains a 3D representation that is actively regenerated at each timestep. As the agent moves, this representation evolves to reflect the current state of the world, enabling consistent spatial reasoning without relying on an ever-growing archive of past observations.
+                <span class="persist">PERSIST</span> takes a fundamentally different approach. Rather than retrieving spatial information from past frames, it maintains a 3D representation that is actively regenerated at each timestep. As the agent moves, this representation evolves to reflect the current state of the world, enabling consistent spatial reasoning without relying on an ever-growing archive of past observations.
               </p>
               <br>
             </div>
@@ -446,46 +453,45 @@
 
 
 <section class="section">
-  <div class="container is-max-desktop">
+  <div class="container is-fullhd">
 
     <!-- Method. -->
     <div class="columns is-centered">
-      <div class="column is-full-width">
+      <div class="column is-four-fifths">
         <h2 class="title is-3 section-title">Method</h2>
         <img src="static/images/method.png" alt="PERSIST Method" class="method-image">
+        <div class="container is-max-desktop">
         <div class="content has-text-justified">
           <p>
-            Initialized with a single pixel frame, <span class="persist">PERSIST</span> evolves in a four-part
-            auto-regressive loop in response to user actions
-            <img src="./static/images/action.png" class="inline-icon-small" alt="Action icon">.
-            We first denoise the 3D environment centred on the agent in the form of
-            a latent <em>world-frame</em>
-            <img src="./static/images/voxels.png" class="inline-icon-large" alt="Voxel icon">.
-            Next, camera parameters
+            Initialized with a single pixel frame, <span class="persist">PERSIST</span> evolves in an auto-regressive loop in
+            response to user actions
+            <img src="./static/images/action.png" class="inline-icon-small" alt="Action icon">
+            . We first denoise the 3D environment centred on the agent in the form of a latent <em>world-frame}</em>
+            <img src="./static/images/voxels.png" class="inline-icon-large" alt="Voxel icon">
+            . Next, camera parameters
             <img src="./static/images/camera.png" class="inline-icon" alt="Camera icon">
-            are predicted with a feed-forward transformer.
-            We then project the world to the camera plane to form a depth-ordered
-            stack of world latents
-            <img src="./static/images/voxel_frame.png" class="inline-icon" alt="Voxel frame icon">.
-            Finally, pixel latents
+            are predicted with a feed-forward transformer. We then project the world to the camera plane to form a
+            depth-ordered stack of world latents
+            <img src="./static/images/voxel_frame.png" class="inline-icon" alt="Voxel frame icon">
+            . Finally, pixel latents
             <img src="./static/images/pixel.png" class="inline-icon" alt="Pixel icon">
-            are diffused, conditioned on pixel-aligned 3D information from the world frame.
+            are denoised, using pixel-aligned 3D information from the world latents stack
+            <img src="./static/images/voxel_frame.png" class="inline-icon" alt="Voxel frame icon"> as guidance.
           </p>
+        </div>
         </div>
 
       </div>
     </div>
-
   </div>
 </section>
 
 <section class="section">
   <div class="container is-fullhd">
 
-    <!-- Method. -->
     <div class="container is-max-desktop">
         <h2 class="title is-3 section-title">New Capabilities</h2>
-        <p>In addition to its improvement to the quality and coherence of generated experiences, we find that PERSIST's 3D representation confers a number of new capabilities.</p>
+        <p>In addition to its improvement to the quality and coherence of generated experiences, we find that <span class="persist">PERSIST</span>'s 3D representation confers a number of new capabilities.</p>
         <br>
         <!--   3D generation     -->
         <h3 class="title is-4 section-title">3D World Generation</h3>
@@ -496,24 +502,24 @@
               Each row corresponds to a specific input RGB frame, while each column shows a distinct sample generated using a different random seed.
             </p>
             <p>
-              Despite starting from the same image, the model produces a range of distinct yet consistent world completions.
-              These samples preserve the structure and semantics of the original view while filling in unseen regions in different plausible ways.
-              This ability allows PERSIST to generate diverse and coherent environments, supporting a wide variety of interactive experiences.            </p>
+              The generated world frames capture the structure and semantics of the original view, while outpainting unseen regions in different plausible ways.
+              This ability allows <span class="persist">PERSIST</span> to generate diverse and coherent environments, supporting a wide variety of interactive experiences.            </p>
             <br>
           </div>
     </div>
-    <div class="container is-fullhd">
-        <div style="display: grid; grid-template-columns: 1fr 4fr; gap: 1rem; margin-bottom: 2rem;">
-            <div style="margin-top : 1rem;">
-                <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 1rem; text-align: center;">
+    <div class="container is-max-desktop">
+        <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-bottom: 2rem;">
+            <div style="margin-top : 1rem; display: grid; gap: 0.75rem;">
+                <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0rem; text-align: center;">
                 Initial condition
                 </h4>
 
 <!-- todo: add whitespace outside of this so we can round the edges             <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: cover; width: auto; height: 310px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">-->
-               <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
-               <img src="./static/images/denoising_grid/a206.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
-               <img src="./static/images/denoising_grid/e0bf.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
-               <img src="./static/images/denoising_grid/e222.png" alt="denoising_row1" style="display: block; object-fit: contain; width: auto; height: 310px; margin: 0 auto;">
+              <img src="./static/images/denoising_grid/e222.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 1rem; margin-bottom: 1.5rem;">
+              <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;">
+              <img src="./static/images/denoising_grid/e0bf.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;">
+              <img src="./static/images/denoising_grid/a206.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+
 
             </div>
             <div style="margin-top : 1rem;">
@@ -522,7 +528,7 @@
                 </h4>
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover;"
                   autoplay muted loop preload="metadata" controls>
-                  <source src="./static/videos/denoising/denoising_grid.mp4" type="video/mp4">
+                  <source src="./static/videos/denoising/denoising_grid2.mp4" type="video/mp4">
               </video>
             </div>
         </div>
@@ -535,12 +541,12 @@
             <p>
               Alternatively, we can leverage direct access to an explicit 3D representation to directly provide the model with 3D data.
               This explicit 3D conditioning allows a greater degree of control over the generated experience than providing an image, as the full surroundings of the agent can be specified.
-              Here we show how closely PERSIST follows ground truth rollouts when it receives a ground truth world frame at initialisation.
+              Here we show how closely <span class="persist">PERSIST</span> follows ground truth rollouts when it receives a ground truth world frame at initialisation.
             </p>
             <br>
           </div>
     </div>
-    <div class="container is-fullhd">
+    <div class="container is-max-desktop">
       <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
         <!-- Left Side -->
         <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
@@ -558,7 +564,7 @@
         <!-- Right Side -->
         <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
             <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
-                3D Conditioning
+                3D Initialisation
             </h4>
 
             <!-- Video 2 -->
@@ -587,7 +593,7 @@
             💡 Tip: Click on the arrows on either side to scroll through different edits.
     </div>
 
-    <div class="container is-fullhd">
+    <div class="container is-max-desktop">
       <div id="results-carousel" class="carousel results-carousel">
         <div class="item item-noedit">
           <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 1rem; margin-bottom: 1rem; text-align: center;">
@@ -638,7 +644,7 @@
       <h3 class="title is-4 section-title">Stable Extended Generations</h3>
         <div class="content has-text-justified">
           <p>
-           Similarly to other autogressive models, PERSIST experiences visual artifacts induced by auto-regressive drift.
+           Similarly to other autogressive models, <span class="persist">PERSIST</span> experiences visual artifacts induced by auto-regressive drift.
             However, we find that our 3D representation is inherently more stable and resistant to drift.
             As such, visual artifacts tend to recede when the model retrieves information from its 3D representation (e.g. when rotating the camera), making it possible to maintain stability over extended horizons.
           </p>
@@ -656,7 +662,7 @@
       <h3 class="title is-4 section-title">Emergence of Persistent World Dynamics</h3>
         <div class="content has-text-justified">
           <p>
-            PERSIST continuously models dynamic processes in the environment, even while they are not being actively rendered to screen space. Here, we show a waterfall that is gradually flooding the area, causing water to eventually appear in the player's view.
+            <span class="persist">PERSIST</span> continuously models dynamic processes in the environment, even while they are not being actively rendered to screen space. Here, we show a waterfall that is gradually flooding the area, causing water to eventually appear in the player's view.
           </p>
         </div>
         <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
@@ -674,7 +680,6 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <!-- Method. -->
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-title">More Results</h2>
