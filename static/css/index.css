@@ -259,7 +259,7 @@ body {
 
 @keyframes zoomOut2{
   0%,50%{ transform: scale(1); }
-  100%{  transform: scale(1.45); }
+  100%{  transform: scale(1.25); }
 }
 
 /* Readability overlay (matches template layering idea) */
@@ -335,4 +335,46 @@ body {
 
 #interpolation-image-wrapper img {
   border-radius: 5px;
+}
+
+.more-results-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 per row */
+  gap: 1rem;
+}
+
+.more-results-item {
+  border-radius: 12px;
+  overflow: hidden;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+/* Equal heights across different resolutions */
+.more-results-video {
+  display: block;
+  width: 100%;
+  height: auto;        /* tweak */
+  object-fit: contain;  /* or cover if you prefer cropping */
+}
+
+/* Hide everything after the first 4 items by default */
+.more-results-grid:not(.expanded) .more-results-item:nth-child(n+5) {
+  display: none;
+}
+
+.more-results-actions {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 768px) {
+  .more-results-grid {
+    grid-template-columns: 1fr;
+  }
+  .more-results-video {
+    width: 100%;
+    height: auto;
+  }
 }

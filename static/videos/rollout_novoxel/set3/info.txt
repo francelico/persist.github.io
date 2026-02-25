@@ -1,1 +1,0 @@
-https://wandb.ai/samuel-garcin-research-projects/voxel_wm/runs/persist260k-xl-vox-1x4gpu-sing-rbt-forward_and_look_around_wo_jump-uid-bb89fa20?nw=nwuserfrancelico

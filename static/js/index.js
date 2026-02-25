@@ -76,4 +76,66 @@ $(document).ready(function() {
 
     bulmaSlider.attach();
 
+    (function () {
+      const grid = document.getElementById("more-results-grid");
+      const btn = document.getElementById("more-results-toggle");
+      if (!grid || !btn) return;
+
+      function ensureVideoLoaded(video) {
+        if (!video || video.dataset.loaded === "1") return;
+        const src = video.dataset.src;
+        if (!src) return;
+
+        // Create <source> only when we decide to load
+        const source = document.createElement("source");
+        source.src = src;
+        source.type = "video/mp4";
+        video.appendChild(source);
+
+        video.dataset.loaded = "1";
+        video.load();
+      }
+
+      // Load the first 4 immediately (so your default view works)
+      const initial = grid.querySelectorAll(".more-results-item:nth-child(-n+4) .more-results-video");
+      initial.forEach(ensureVideoLoaded);
+
+      // Optional: IntersectionObserver to load videos only when scrolled into view
+      const io = ("IntersectionObserver" in window)
+        ? new IntersectionObserver((entries) => {
+            entries.forEach((e) => {
+              if (e.isIntersecting) {
+                ensureVideoLoaded(e.target);
+                io.unobserve(e.target);
+              }
+            });
+          }, { rootMargin: "200px" })
+        : null;
+
+      function observeVisibleVideos() {
+        const visibleVideos = grid.querySelectorAll(".more-results-item:not([style*='display: none']) .more-results-video");
+        visibleVideos.forEach(v => {
+          if (io) io.observe(v);
+          else ensureVideoLoaded(v); // fallback: load immediately
+        });
+      }
+
+      // Observe initial ones (and load when near viewport)
+      observeVisibleVideos();
+
+      btn.addEventListener("click", () => {
+        const expanded = grid.classList.toggle("expanded");
+        btn.textContent = expanded ? "Show fewer results" : "Show all results";
+
+        // Once expanded, start observing/loading newly revealed videos
+        observeVisibleVideos();
+
+        // Optional: if collapsing, pause videos to reduce CPU
+        if (!expanded) {
+          grid.querySelectorAll(".more-results-video").forEach(v => v.pause());
+          grid.scrollIntoView({ behavior: "smooth", block: "start" });
+        }
+      });
+    })();
+
 })
