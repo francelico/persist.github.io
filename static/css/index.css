@@ -287,12 +287,12 @@ body {
 }
 
 /* Mobile: fewer columns like the template */
-@media (max-width: 768px) {
-  .video-grid {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-  }
-}
+/*@media (max-width: 384px) {*/
+/*  .video-grid {*/
+/*    grid-template-columns: repeat(4, 1fr);*/
+/*    grid-template-rows: repeat(4, 1fr);*/
+/*  }*/
+/*}*/
 
 /* Optional: make arXiv / PDF buttons text stay white */
 .hero-section .button.is-dark {
