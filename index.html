@@ -51,12 +51,12 @@
 
     <div class="video-half left">
       <!-- Paste 1 single video cell here (4x4) -->
-      <div class="video-grid" style="--cols: 1; --rows: 1; animation: zoomOut2 10s ease-in-out forwards;">
+      <div class="video-grid" style="--cols: 1; --rows: 1; transform-origin:50% 50%;">
         <div class="video-cell" style="object-position: center;">
           <video autoplay muted loop playsinline preload="metadata">
           <!-- Mobile version -->
           <source
-            src="./static/videos/isometric_xy_mobile.mp4"
+            src="./static/videos/isometric_xy_tablet.mp4"
             type="video/mp4"
             media="(max-width: 768px)">
 
@@ -77,7 +77,7 @@
     <div class="video-half right">
         <!-- Right half grid -->
       <div class="video-grid" style="--cols: 1; --rows: 1;">
-        <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="metadata"><source src="./static/videos/grid.mp4" type="video/mp4"></video></div>
+        <div class="video-cell" style="object-position: right top;"><video style="object-position: left top;" autoplay muted loop playsinline preload="metadata"><source src="./static/videos/grid.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </div>
@@ -254,7 +254,7 @@
             <br>
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem; ">
+        <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
                 <!-- Left Side (33% width): w/o 3D state -->
                 <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px; padding: 1rem; border: 1px solid rgba(0, 0, 0, 0.1);">
                     <h4 style="font-size: 1.3rem; font-weight: 600; margin-bottom: 1.5rem; text-align: center;">
@@ -274,7 +274,7 @@
                     </div>
 
                     <!-- Two images below video -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Initial View</p>
                             <img src="./static/images/revisit/meadow_start.png" alt="Initial View 1" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
@@ -305,7 +305,7 @@
                     </div>
 
                     <!-- Two images below video -->
-                    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+                    <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
                         <div>
                             <p style="font-size: 0.9rem; margin-bottom: 0.5rem; text-align: center;">Initial View</p>
                             <img src="./static/images/revisit/rollout74_start.png" alt="Initial View 2" style="display: block; object-fit: cover; width: auto; height: 160px; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
@@ -331,7 +331,7 @@
             <br>
           </div>
         </div>
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+        <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
           <!-- Left Side -->
           <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
               <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
@@ -378,7 +378,7 @@
               <br>
             </div>
           </div>
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
+        <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 2fr; gap: 1rem; margin-bottom: 2rem;">
           <!-- Left Side -->
           <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
               <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">
@@ -476,16 +476,17 @@
           </div>
     </div>
     <div class="container is-max-desktop">
-        <div style="display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-bottom: 2rem;">
-            <div style="margin-top : 1rem; display: grid; gap: 0.75rem;">
-                <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0rem; text-align: center;">
+        <div class="denoising-grid" style="display: grid; grid-template-columns: 1fr 3fr; gap: 2rem; margin-bottom: 2rem;">
+<!--            <div style="margin-top : 1rem; display: grid; gap: 0.75rem;">-->
+
+            <div class="denoising-images" style="margin-top: 1rem; display: grid; gap: 0.75rem;">
+               <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 5rem; text-align: center;">
                 Initial condition
                 </h4>
-
-              <img src="./static/images/denoising_grid/e222.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-top: 1rem; margin-bottom: 1.5rem;">
-              <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;">
-              <img src="./static/images/denoising_grid/e0bf.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin-bottom: 1.5rem;">
-              <img src="./static/images/denoising_grid/a206.png" alt="denoising_row1" style="display: block; object-fit: cover; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+              <img src="./static/images/denoising_grid/e222.png" alt="denoising_row1" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+              <img src="./static/images/denoising_grid/4811.png" alt="denoising_row1" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+              <img src="./static/images/denoising_grid/e0bf.png" alt="denoising_row1" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+              <img src="./static/images/denoising_grid/a206.png" alt="denoising_row1" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
 
 
             </div>
@@ -514,7 +515,7 @@
           </div>
     </div>
     <div class="container is-max-desktop">
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
+      <div class="compare-grid" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 2rem;">
         <!-- Left Side -->
         <div style="background: rgba(255, 255, 255, 0.05); border-radius: 12px">
             <h4 style="font-size: 1.3rem; font-weight: 600; margin-top: 0; margin-bottom: 0.5rem; text-align: center;">

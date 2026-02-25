@@ -245,8 +245,8 @@ body {
 }
 
 .hero-section .video-cell video{
-  width:100%;
-  height:100%;
+  width: 100vw;
+  height: 100vh;
   object-fit:cover;     /* or cover */
   display:block;
 }
@@ -256,9 +256,91 @@ body {
   100%{  transform: scale(1); }
 }
 
-@keyframes zoomOut2{
-  0%,50%{ transform: scale(2); }
-  100%{  transform: scale(1.25); }
+@keyframes zoomOutMobile{
+  0%,50%{ transform: scale(1.25); }
+  100%{  transform: scale(1); }
+}
+
+/*!* mobile: anchor zoom to top-left *!*/
+@media (max-width: 768px) {
+  .hero-section .video-half.right .video-grid {
+    transform-origin: 0% 0%;
+    animation: zoomOutMobile 10s ease-in-out forwards;
+  }
+
+    .hero-section .video-half.left .video-grid {
+    animation: zoomOutMobile 10s ease-in-out forwards;
+  }
+}
+
+/* Mobile: stack comparison cards vertically */
+@media (max-width: 768px) {
+  .compare-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* Ensure both columns always have equal height */
+.denoising-grid {
+  align-items: stretch;
+}
+
+/* Make the left column distribute content evenly */
+.denoising-grid > div:first-child {
+  display: grid;
+  grid-template-rows: auto repeat(4, 1fr);
+  gap: 0.75rem;
+  height: 100%;
+}
+
+/* Remove margin-based spacing and use gap instead */
+.denoising-grid .denoising-images img {
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* Ensure video column fills available height */
+.denoising-grid > div:last-child {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.denoising-grid video {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+@media (max-width: 768px) {
+
+  .denoising-grid > div:first-child {
+    grid-template-rows: auto auto auto auto auto;
+  }
+
+  .denoising-grid video {
+    height: auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .denoising-grid h4 {
+    margin-bottom: 0.75rem !important;
+    font-size: 1.1rem !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .compare-grid video {
+    width: 100% !important;
+    height: auto !important;          /* let it size naturally */
+    object-fit: contain !important;   /* key: no cropping */
+    background: #000;                 /* nicer than transparent bars */
+    border-radius: 8px;
+  }
 }
 
 /* Readability overlay (matches template layering idea) */
@@ -283,13 +365,6 @@ body {
 /* Make the Bulma hero inside the overlay transparent */
 .hero-section .hero.is-transparent {
   background: transparent;
-}
-
-/* Mobile: fewer columns like the template */
-@media (max-width: 768px) {
-  .hero-section .video-half.right .video-grid {
-    transform-origin: 0% 0%;
-  }
 }
 
 /* Optional: make arXiv / PDF buttons text stay white */
