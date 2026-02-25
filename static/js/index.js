@@ -146,19 +146,4 @@ $(document).ready(function() {
     v.controls = true;
   });
 
-  document.addEventListener("DOMContentLoaded", function () {
-
-      const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-      if (isMobile) {
-        document.querySelectorAll("video.hero-video").forEach(video => {
-          video.removeAttribute("autoplay");
-          video.pause();
-          video.currentTime = 0;
-          video.controls = true; // optional: show play button
-        });
-  }
-
-  });
-
 })
