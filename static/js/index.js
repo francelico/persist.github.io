@@ -146,4 +146,40 @@ $(document).ready(function() {
     v.controls = true;
   });
 
+(function () {
+  function getAspect(video) {
+    return (video.videoWidth && video.videoHeight)
+      ? (video.videoWidth / video.videoHeight)
+      : (16 / 9);
+  }
+
+  function layoutGrid(grid) {
+    const vids = grid.querySelectorAll("video");
+    if (vids.length < 2) return;
+
+    const rL = getAspect(vids[0]);
+    const rR = getAspect(vids[1]);
+
+    grid.style.gridTemplateColumns = `${rL}fr ${rR}fr`;
+  }
+
+  function initGrid(grid) {
+    const relayout = () => layoutGrid(grid);
+
+    relayout(); // initial (fallback aspect)
+    grid.querySelectorAll("video").forEach(v => v.addEventListener("loadedmetadata", relayout));
+
+    const ro = new ResizeObserver(relayout);
+    ro.observe(grid);
+  }
+
+  // IMPORTANT: only apply to the *two-column* compare grids
+  document.querySelectorAll(".compare-grid").forEach(grid => {
+    // skip inner 1-col / 2-col image grids if you want:
+    const style = getComputedStyle(grid);
+    if (!style.gridTemplateColumns || style.gridTemplateColumns.split(" ").length < 2) return;
+    initGrid(grid);
+  });
+})();
+
 })
