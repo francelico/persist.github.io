@@ -48,92 +48,38 @@
 <section class="hero-section">
 
   <div class="video-grids">
-  <!-- Left half grid -->
-<!--  <div class="video-grid left" style="&#45;&#45;cols: 4; &#45;&#45;rows: 4;">-->
-<!--    &lt;!&ndash; Paste 16 cells here (4x4) &ndash;&gt;-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/voxel.mp4" type="video/mp4"></video></div>-->
 
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/voxel.mp4" type="video/mp4"></video></div>-->
-<!--    <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/voxel.mp4" type="video/mp4"></video></div>-->
+    <div class="video-half left">
+      <!-- Paste 1 single video cell here (4x4) -->
+      <div class="video-grid" style="--cols: 1; --rows: 1; animation: zoomOut2 10s ease-in-out forwards;">
+        <div class="video-cell" style="object-position: center;">
+          <video autoplay muted loop playsinline preload="metadata">
+          <!-- Mobile version -->
+          <source
+            src="./static/videos/isometric_xy_mobile.mp4"
+            type="video/mp4"
+            media="(max-width: 768px)">
 
-<!--  </div>-->
+          <!-- Tablet version -->
+          <source src="./static/videos/isometric_xy_tablet.mp4"
+            type="video/mp4"
+            media="(max-width: 1400px)">
 
-  <div class="video-half left" style="animation: zoomOut2 10s ease-in-out forwards;">
-    <!-- Paste 1 single video cell here (4x4) -->
-    <div class="video-grid" style="--cols: 1; --rows: 1;">
-      <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="none"><source src="./static/videos/isometric_xy.mp4" type="video/mp4"></video></div>
-    </div>
-  </div>
-
-  <div class="video-half right">
-    <!-- Paste 1 single video cell here (4x4) -->
-<!--    <div class="video-grid" style="&#45;&#45;cols: 1; &#45;&#45;rows: 1;">-->
-<!--      <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="none"><source src="./static/videos/isometric_comp_xz.mp4" type="video/mp4"></video></div>-->
-<!--    </div>-->
-
-      <!-- Right half grid -->
-    <div class="video-grid" style="--cols: 1; --rows: 1;">
-      <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="none"><source src="./static/videos/grid.mp4" type="video/mp4"></video></div>
-
-      <!-- Paste 32 cells here (4x8) -->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/010.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/063.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/080.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set3/010.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/e56c1cefc97c07bc9fed53cb6549b271f59a22544631bc419cff6939b7410d44.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/a42f20b218e2aeb8280cff26b4a7d60de633d0368213603680ce02f1ebea5549.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/a42f20b218e2aeb8280cff26b4a7d60de633d0368213603680ce02f1ebea5549.mp4" type="video/mp4"></video></div>-->
-
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/69/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/73/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/74/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/76/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/79/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/84/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/85/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/86/pixel.mp4" type="video/mp4"></video></div>-->
-
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/88/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/91/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/94/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/95/pixel.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/001.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/004.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/006.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/009.mp4" type="video/mp4"></video></div>-->
-
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/012.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/019.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/023.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/026.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/049.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set1/054.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/5bdc839fe8e691ddc25a3e1503aab1339b6d72be1278a692771a119d5a114811.mp4" type="video/mp4"></video></div>-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_novoxel/set2/6b39f304d45c67f17402442a7ca3c82521d8cbb924739fe18c1d077463313f40.mp4" type="video/mp4"></video></div>-->
-      <!--dropped-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/72/pixel.mp4" type="video/mp4"></video></div> !-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/81/pixel.mp4" type="video/mp4"></video></div> !-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/99/pixel.mp4" type="video/mp4"></video></div> !-->
-      <!--      <div class="video-cell"><video autoplay muted loop playsinline preload="none"><source src="./static/videos/rollout_videos/100/pixel.mp4" type="video/mp4"></video></div> !-->
-
+          <!-- Desktop version -->
+          <source
+            src="./static/videos/isometric_xy.mp4"
+            type="video/mp4">
+          </video>
+        </div>
+      </div>
     </div>
 
-
-  </div>
+    <div class="video-half right">
+        <!-- Right half grid -->
+      <div class="video-grid" style="--cols: 1; --rows: 1;">
+        <div class="video-cell" style="object-position: center;"><video style="object-fit: cover;" autoplay muted loop playsinline preload="metadata"><source src="./static/videos/grid.mp4" type="video/mp4"></video></div>
+      </div>
+    </div>
   </div>
 
   <!-- Dark gradient overlay for readability -->

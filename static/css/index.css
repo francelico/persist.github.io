@@ -221,7 +221,6 @@ body {
 .hero-section .video-half{
   position:relative;
   overflow:hidden;          /* key */
-  contain: paint;           /* optional but helpful */
   background:#000;
 }
 
@@ -258,7 +257,7 @@ body {
 }
 
 @keyframes zoomOut2{
-  0%,50%{ transform: scale(1); }
+  0%,50%{ transform: scale(2); }
   100%{  transform: scale(1.25); }
 }
 
@@ -287,12 +286,11 @@ body {
 }
 
 /* Mobile: fewer columns like the template */
-/*@media (max-width: 384px) {*/
-/*  .video-grid {*/
-/*    grid-template-columns: repeat(4, 1fr);*/
-/*    grid-template-rows: repeat(4, 1fr);*/
-/*  }*/
-/*}*/
+@media (max-width: 768px) {
+  .hero-section .video-half.right .video-grid {
+    transform-origin: 0% 0%;
+  }
+}
 
 /* Optional: make arXiv / PDF buttons text stay white */
 .hero-section .button.is-dark {
