@@ -245,7 +245,7 @@ body {
 }
 
 .hero-section .video-cell video{
-  width: 100vw;
+  width: 55vw;
   height: 100vh;
   object-fit:cover;     /* or cover */
   display:block;
@@ -257,19 +257,27 @@ body {
 }
 
 @keyframes zoomOutMobile{
-  0%,50%{ transform: scale(1.25); }
+  0%,50%{ transform: scale(1.5); }
   100%{  transform: scale(1); }
 }
 
 /*!* mobile: anchor zoom to top-left *!*/
 @media (max-width: 768px) {
+  .hero-section .video-grids {
+    grid-template-columns: 1fr; !important;/* stack vertically */
+  }
+
   .hero-section .video-half.right .video-grid {
-    transform-origin: 0% 0%;
     animation: zoomOutMobile 10s ease-in-out forwards;
   }
 
-    .hero-section .video-half.left .video-grid {
+  .hero-section .video-half.left .video-grid {
     animation: zoomOutMobile 10s ease-in-out forwards;
+  }
+
+  .hero-section .video-cell video{
+    width: 100vw;
+    height: 55vh;
   }
 }
 
