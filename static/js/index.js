@@ -138,4 +138,12 @@ $(document).ready(function() {
       });
     })();
 
+  // ---- Controls: only show controls when the user clicks a video ----
+  // Uses event delegation so it works for videos loaded later too.
+  document.addEventListener("click", (e) => {
+    const v = e.target.closest("video");
+    if (!v) return;
+    v.controls = true;
+  });
+
 })
