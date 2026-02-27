@@ -198,9 +198,10 @@ $(document).ready(function() {
       entries.forEach(function(video) {
         if (video.isIntersecting) {
           const videoTarget = video.target;
-          videoTarget.muted = true;
-          videoTarget.playsinline = true;
-          videoTarget.loop = true;
+          // Only add playsinline if it's not already present in HTML
+          if (!videoTarget.hasAttribute('playsinline')) {
+            videoTarget.playsinline = true;
+          }
 
           let source_mp4, source_webm;
 
@@ -238,7 +239,9 @@ $(document).ready(function() {
 
 
           videoTarget.load();
-          videoTarget.play();
+          // Removed videoTarget.play() as per user request.
+          // Removed videoTarget.muted = true; and videoTarget.loop = true;
+          // as these should be set in HTML if desired, or controlled by user.
 
           lazyVideoObserver.unobserve(videoTarget);
         }
