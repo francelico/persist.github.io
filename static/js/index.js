@@ -83,14 +83,22 @@ $(document).ready(function() {
 
       function ensureVideoLoaded(video) {
         if (!video || video.dataset.loaded === "1") return;
-        const src = video.dataset.src;
-        if (!src) return;
 
-        // Create <source> only when we decide to load
-        const source = document.createElement("source");
-        source.src = src;
-        source.type = "video/mp4";
-        video.appendChild(source);
+        const src_mp4 = video.dataset.srcMp4 || video.dataset.src;
+        const src_webm = video.dataset.srcWebm;
+
+        if (src_webm) {
+          const source_webm = document.createElement("source");
+          source_webm.src = src_webm;
+          source_webm.type = "video/webm";
+          video.appendChild(source_webm);
+        }
+        if (src_mp4) {
+          const source_mp4 = document.createElement("source");
+          source_mp4.src = src_mp4;
+          source_mp4.type = "video/mp4";
+          video.appendChild(source_mp4);
+        }
 
         video.dataset.loaded = "1";
         video.load();
@@ -180,6 +188,67 @@ $(document).ready(function() {
     if (!style.gridTemplateColumns || style.gridTemplateColumns.split(" ").length < 2) return;
     initGrid(grid);
   });
+})();
+
+(function () {
+  const lazyVideos = document.querySelectorAll('.lazy-video');
+
+  if ('IntersectionObserver' in window) {
+    let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
+      entries.forEach(function(video) {
+        if (video.isIntersecting) {
+          const videoTarget = video.target;
+          videoTarget.muted = true;
+          videoTarget.playsinline = true;
+          videoTarget.loop = true;
+
+          let source_mp4, source_webm;
+
+          if (videoTarget.dataset.srcDesktopMp4 && window.innerWidth >= 768) {
+            source_webm = document.createElement('source');
+            source_webm.src = videoTarget.dataset.srcDesktopWebm;
+            source_webm.type = 'video/webm';
+            videoTarget.appendChild(source_webm);
+
+            source_mp4 = document.createElement('source');
+            source_mp4.src = videoTarget.dataset.srcDesktopMp4;
+            source_mp4.type = 'video/mp4';
+            videoTarget.appendChild(source_mp4);
+          } else if (videoTarget.dataset.srcMobileMp4) {
+            source_webm = document.createElement('source');
+            source_webm.src = videoTarget.dataset.srcMobileWebm;
+            source_webm.type = 'video/webm';
+            videoTarget.appendChild(source_webm);
+            
+            source_mp4 = document.createElement('source');
+            source_mp4.src = videoTarget.dataset.srcMobileMp4;
+            source_mp4.type = 'video/mp4';
+            videoTarget.appendChild(source_mp4);
+          } else if (videoTarget.dataset.srcMp4) {
+             source_webm = document.createElement('source');
+            source_webm.src = videoTarget.dataset.srcWebm;
+            source_webm.type = 'video/webm';
+            videoTarget.appendChild(source_webm);
+
+            source_mp4 = document.createElement('source');
+            source_mp4.src = videoTarget.dataset.srcMp4;
+            source_mp4.type = 'video/mp4';
+            videoTarget.appendChild(source_mp4);
+          }
+
+
+          videoTarget.load();
+          videoTarget.play();
+
+          lazyVideoObserver.unobserve(videoTarget);
+        }
+      });
+    }, { rootMargin: "200px" });
+
+    lazyVideos.forEach(function(lazyVideo) {
+      lazyVideoObserver.observe(lazyVideo);
+    });
+  }
 })();
 
 })

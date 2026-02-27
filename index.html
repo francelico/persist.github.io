@@ -3,8 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="description"
-        content="Persistent Environment Representations for Simulating Interactive Space-Time (PERSIST),
-        a world model for complex and persistent 3D environments.">
+        content="Persistent Environment Representations for Simulating Interactive Space-Time (PERSIST), a world model for complex and persistent 3D environments.">
   <meta name="keywords" content="PERSIST, World Models, Generative Models">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>PERSIST: World Models with Persistent 3D State</title>
@@ -56,18 +55,18 @@
           <video autoplay muted loop playsinline preload="metadata">
           <!-- Mobile version -->
           <source
-            src="./static/videos/isometric_xy_tablet.mp4"
+            src="./static/videos/optimized/isometric_xy_1440.mp4"
             type="video/mp4"
             media="(max-width: 768px)">
 
           <!-- Tablet version -->
-          <source src="./static/videos/isometric_xy_tablet.mp4"
+          <source src="./static/videos/optimized/isometric_xy_1440.mp4"
             type="video/mp4"
             media="(max-width: 1400px)">
 
           <!-- Desktop version -->
           <source
-            src="./static/videos/isometric_xy.mp4"
+            src="./static/videos/optimized/isometric_xy_1920.mp4"
             type="video/mp4">
           </video>
         </div>
@@ -77,7 +76,7 @@
     <div class="video-half right">
         <!-- Right half grid -->
       <div class="video-grid" style="--cols: 1; --rows: 1;">
-        <div class="video-cell" style="object-position: right top;"><video style="object-position: left top;" autoplay muted loop playsinline preload="metadata"><source src="./static/videos/grid.mp4" type="video/mp4"></video></div>
+        <div class="video-cell" style="object-position: right top;"><video style="object-position: left top;" autoplay muted loop playsinline preload="metadata"><source src="./static/videos/optimized/grid.mp4" type="video/mp4"></video></div>
       </div>
     </div>
   </div>
@@ -263,8 +262,9 @@
 
               <!-- Video 1 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/oasis_web/meadow_look_up_down.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/oasis_web_meadow_look_up_down.jpg"
+                  data-src-mp4="./static/videos/optimized/oasis_web/meadow_look_up_down.mp4"
+                  data-src-webm="./static/videos/optimized/oasis_web/meadow_look_up_down.webm">
               </video>
 
               <div class="hint">
@@ -280,9 +280,11 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px;"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/stacked_mobile/74_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-                  <source src="./static/videos/stacked_videos/74_stacked_h.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/stacked_mobile_74_stacked.jpg"
+                  data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/74_stacked.mp4"
+                  data-src-mobile-webm="./static/videos/optimized/stacked_mobile/74_stacked.webm"
+                  data-src-desktop-mp4="./static/videos/optimized/stacked_videos/74_stacked_h.mp4"
+                  data-src-desktop-webm="./static/videos/optimized/stacked_videos/74_stacked_h.webm">
               </video>
 
               <div class="hint">
@@ -310,8 +312,9 @@
 
               <!-- Video 1 -->
                 <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                    autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/oasis_web/walk_backwards.mp4" type="video/mp4">
+                    class="lazy-video" preload="none" poster="./static/images/posters/oasis_web_walk_backwards.jpg"
+                    data-src-mp4="./static/videos/optimized/oasis_web/walk_backwards.mp4"
+                    data-src-webm="./static/videos/optimized/oasis_web/walk_backwards.webm">
                 </video>
             <div class="hint">
               The model only predicts flat, uniform terrain behind the player as they move backwards.
@@ -326,17 +329,19 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/stacked_mobile/94_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-                  <source src="./static/videos/stacked_videos/94_stacked_h.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/stacked_mobile_94_stacked.jpg"
+                  data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/94_stacked.mp4"
+                  data-src-mobile-webm="./static/videos/optimized/stacked_mobile/94_stacked.webm"
+                  data-src-desktop-mp4="./static/videos/optimized/stacked_videos/94_stacked_h.mp4"
+                  data-src-desktop-webm="./static/videos/optimized/stacked_videos/94_stacked_h.webm">
               </video>
              <div class="hint">
-              A collision gets successfuly modelled as the player walks into a tree while moving backwards.
+              A collision gets successfully modelled as the player walks into a tree while moving backwards.
              </div>
           </div>
         </div>
 
-        <h3 class="title is-4 section-title">Key-frame retrieval struggles to generalize beyond past observations</h3>
+        <h3 class="title is-4 section-title">Key-frame retrieval struggles to generalise beyond past observations</h3>
           <div class="container is-max-desktop">
             <div class="content has-text-justified">
               <p>
@@ -358,8 +363,9 @@
 
               <!-- Video 1 -->
                 <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                    autoplay muted loop playsinline preload="metadata">
-                    <source src="./static/videos/worldmem/plains_000007.mp4" type="video/mp4">
+                    class="lazy-video" preload="none" poster="./static/images/posters/worldmem_plains_000007.jpg"
+                    data-src-mp4="./static/videos/optimized/worldmem/plains_000007.mp4"
+                    data-src-webm="./static/videos/optimized/worldmem/plains_000007.webm">
                 </video>
             <div class="hint">
               Key-frame retrieval fails once the player leaves the starting area.
@@ -374,9 +380,11 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/stacked_mobile/keyframe_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-                  <source src="./static/videos/stacked_videos/keyframe_stacked_h.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/stacked_mobile_keyframe_stacked.jpg"
+                  data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/keyframe_stacked.mp4"
+                  data-src-mobile-webm="./static/videos/optimized/stacked_mobile/keyframe_stacked.webm"
+                  data-src-desktop-mp4="./static/videos/optimized/stacked_videos/keyframe_stacked_h.mp4"
+                  data-src-desktop-webm="./static/videos/optimized/stacked_videos/keyframe_stacked_h.webm">
               </video>
             <div class="hint">
               <span class="persist">PERSIST</span> extends its 3D representation as the player explores, maintaining spatial consistency as the player moves into new areas or revisits old ones from new viewpoints.
@@ -401,7 +409,7 @@
         <div class="container is-max-desktop">
         <div class="content has-text-justified">
           <p>
-            Initialized with a single pixel frame, <span class="persist">PERSIST</span> evolves in an auto-regressive loop in
+            Initialised with a single pixel frame, <span class="persist">PERSIST</span> evolves in an auto-regressive loop in
             response to user actions
             <img src="./static/images/action.png" class="inline-icon-small" alt="Action icon">
             . We first denoise the 3D environment centred on the agent in the form of a latent <em>world frame</em>
@@ -466,8 +474,9 @@
                 Generated initial world frame <img src="./static/images/voxels.png" class="inline-icon-large" alt="Voxel icon"> (3 rollouts, 20 denoising steps)
                 </h4>
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover;"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/denoising/denoising_grid2.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/denoising_denoising_grid2.jpg"
+                  data-src-mp4="./static/videos/optimized/denoising/denoising_grid2.mp4"
+                  data-src-webm="./static/videos/optimized/denoising/denoising_grid2.webm">
               </video>
             </div>
         </div>
@@ -495,8 +504,9 @@
 
             <!-- Video 1 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/stacked_videos/voxel_init_stacked_gt.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/stacked_videos_voxel_init_stacked_gt.jpg"
+                  data-src-mp4="./static/videos/optimized/stacked_videos/voxel_init_stacked_gt.mp4"
+                  data-src-webm="./static/videos/optimized/stacked_videos/voxel_init_stacked_gt.webm">
               </video>
         </div>
 
@@ -508,8 +518,9 @@
 
             <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  autoplay muted loop playsinline preload="metadata">
-                  <source src="./static/videos/stacked_videos/voxel_init_stacked.mp4" type="video/mp4">
+                  class="lazy-video" preload="none" poster="./static/images/posters/stacked_videos_voxel_init_stacked.jpg"
+                  data-src-mp4="./static/videos/optimized/stacked_videos/voxel_init_stacked.mp4"
+                  data-src-webm="./static/videos/optimized/stacked_videos/voxel_init_stacked.webm">
               </video>
         </div>
       </div>
@@ -534,9 +545,9 @@
                 No edits
           </h4>
           <img src="./static/images/orig.png" alt="No Edits" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
-          <video poster="" id="noedit" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/stacked_videos/no_edits.mp4"
-                    type="video/mp4">
+          <video poster="./static/images/posters/stacked_videos_no_edits.jpg" id="noedit" class="lazy-video" preload="none" height="100%"
+            data-src-mp4="./static/videos/optimized/stacked_videos/no_edits.mp4"
+            data-src-webm="./static/videos/optimized/stacked_videos/no_edits.webm">
           </video>
         </div>
         <div class="item item-desert">
@@ -544,9 +555,9 @@
                 Add desert at frame 20
           </h4>
           <img src="./static/images/qual_q2.png" alt="Desert Quad" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
-          <video poster="" id="desert" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/stacked_videos/edit_quad_desert.mp4"
-                    type="video/mp4">
+          <video poster="./static/images/posters/stacked_videos_edit_quad_desert.jpg" id="desert" class="lazy-video" preload="none" height="100%"
+            data-src-mp4="./static/videos/optimized/stacked_videos/edit_quad_desert.mp4"
+            data-src-webm="./static/videos/optimized/stacked_videos/edit_quad_desert.webm">
           </video>
         </div>
         <div class="item item-hill">
@@ -554,9 +565,9 @@
                 Add hill at frame 20
           </h4>
           <img src="./static/images/qual_q1.png" alt="Hill Quad" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
-          <video poster="" id="hill" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/stacked_videos/edit_quad_hill.mp4"
-                    type="video/mp4">
+          <video poster="./static/images/posters/stacked_videos_edit_quad_hill.jpg" id="hill" class="lazy-video" preload="none" height="100%"
+            data-src-mp4="./static/videos/optimized/stacked_videos/edit_quad_hill.mp4"
+            data-src-webm="./static/videos/optimized/stacked_videos/edit_quad_hill.webm">
           </video>
         </div>
         <div class="item item-tree">
@@ -564,9 +575,9 @@
                 Add tree at frame 20
           </h4>
           <img src="./static/images/qual_s.png" alt="Tree" style="display: block; object-fit: contain; width: auto; height: 140px; margin: 0 auto;">
-          <video poster="" id="edit_tree2" autoplay muted loop playsinline height="100%">
-            <source src="./static/videos/stacked_videos/edit_tree.mp4"
-                    type="video/mp4">
+          <video poster="./static/images/posters/stacked_videos_edit_tree.jpg" id="edit_tree2" class="lazy-video" preload="none" height="100%"
+            data-src-mp4="./static/videos/optimized/stacked_videos/edit_tree.mp4"
+            data-src-webm="./static/videos/optimized/stacked_videos/edit_tree.webm">
           </video>
         </div>
       </div>
@@ -583,9 +594,11 @@
         </div>
         <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
             <video style="display:block; object-position: bottom; width: 100%; height: 100%; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                autoplay muted loop playsinline preload="metadata">
-                <source src="./static/videos/stacked_mobile/long_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-                <source src="./static/videos/stacked_videos/long_stacked_h.mp4" type="video/mp4">
+                class="lazy-video" preload="none" poster="./static/images/posters/stacked_mobile_long_stacked.jpg"
+                data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/long_stacked.mp4"
+                data-src-mobile-webm="./static/videos/optimized/stacked_mobile/long_stacked.webm"
+                data-src-desktop-mp4="./static/videos/optimized/stacked_videos/long_stacked_h.mp4"
+                data-src-desktop-webm="./static/videos/optimized/stacked_videos/long_stacked_h.webm">
             </video>
         </div>
         <div class="hint">
@@ -605,21 +618,25 @@
             💡 Tip: Click on the arrows on either side to scroll through videos.
         </div>
         <div id="dyn-carousel" class="carousel results-carousel" data-slides-to-show="1">
+          <!-- no poster here, it messes up the formatting.-->
           <div class="item item-cave">
-            <video poster="" id="cave" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/stacked_mobile/water_cave_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-              <source src="./static/videos/stacked_videos/water_cave_stacked_h.mp4"
-                      type="video/mp4">
+            <video id="cave" class="lazy-video" preload="none" height="100%"
+              data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/water_cave_stacked.mp4"
+              data-src-mobile-webm="./static/videos/optimized/stacked_mobile/water_cave_stacked.webm"
+              data-src-desktop-mp4="./static/videos/optimized/stacked_videos/water_cave_stacked_h.mp4"
+              data-src-desktop-webm="./static/videos/optimized/stacked_videos/water_cave_stacked_h.webm">
             </video>
           <div class="hint" style="margin-top: 2rem;">
              A deep sea cave (bottom right of 3D visualisation) gets flooded as the player swims in the ocean above.
           </div>
           </div>
           <div class="item item-waterfall">
-            <video poster="" id="waterfall" autoplay muted loop playsinline height="100%">
-              <source src="./static/videos/stacked_mobile/waterfall_stacked.mp4" type="video/mp4" media="(max-width: 768px)">
-              <source src="./static/videos/stacked_videos/waterfall_stacked_h.mp4"
-                      type="video/mp4">
+            <!-- no poster here, it messes up the formatting.-->
+            <video id="waterfall" class="lazy-video" preload="none" height="100%"
+              data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/waterfall_stacked.mp4"
+              data-src-mobile-webm="./static/videos/optimized/stacked_mobile/waterfall_stacked.webm"
+              data-src-desktop-mp4="./static/videos/optimized/stacked_videos/waterfall_stacked_h.mp4"
+              data-src-desktop-webm="./static/videos/optimized/stacked_videos/waterfall_stacked_h.webm">
             </video>
           <div class="hint" style="margin-top: 2rem;">
              A waterfall floods the area, causing water to appear in the player's view. (3D visualisation sliced and zoomed in for clarity)
@@ -644,61 +661,81 @@
       <!-- Each item: note data-src (not src) for performance -->
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_d910863dae5300200bddd5e098dd5e2c7aa939e515edfa1c13a320b683e8a713_79_74efb34701bcc3aee4a8_stacked.mp4">
+          poster="./static/images/posters/more_results/val_d910863dae5300200bddd5e098dd5e2c7aa939e515edfa1c13a320b683e8a713_79_74efb34701bcc3aee4a8_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_d910863dae5300200bddd5e098dd5e2c7aa939e515edfa1c13a320b683e8a713_79_74efb34701bcc3aee4a8_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_d910863dae5300200bddd5e098dd5e2c7aa939e515edfa1c13a320b683e8a713_79_74efb34701bcc3aee4a8_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_e1855b9bef58fadb32b3214014c3fc61994d0eb152af1639c5a39373b0f5055a_88_c7f6a4862b0d3ac5f892_stacked.mp4">
+          poster="./static/images/posters/more_results/val_e1855b9bef58fadb32b3214014c3fc61994d0eb152af1639c5a39373b0f5055a_88_c7f6a4862b0d3ac5f892_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_e1855b9bef58fadb32b3214014c3fc61994d0eb152af1639c5a39373b0f5055a_88_c7f6a4862b0d3ac5f892_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_e1855b9bef58fadb32b3214014c3fc61994d0eb152af1639c5a39373b0f5055a_88_c7f6a4862b0d3ac5f892_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_e22216bb4295e19884764e9b0f85ce080a76a87ac7a9f07aa391f25648265bda_14_7eb870958b1013c44990_stacked.mp4">
+          poster="./static/images/posters/more_results/val_e22216bb4295e19884764e9b0f85ce080a76a87ac7a9f07aa391f25648265bda_14_7eb870958b1013c44990_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_e22216bb4295e19884764e9b0f85ce080a76a87ac7a9f07aa391f25648265bda_14_7eb870958b1013c44990_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_e22216bb4295e19884764e9b0f85ce080a76a87ac7a9f07aa391f25648265bda_14_7eb870958b1013c44990_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_e4f6dd5c09bfd7cb4e415dbd390f3180678908e6510c2c1ed29437cbfa56d260_46_ce60b61125c6529abce2_stacked.mp4">
+          poster="./static/images/posters/more_results/val_e4f6dd5c09bfd7cb4e415dbd390f3180678908e6510c2c1ed29437cbfa56d260_46_ce60b61125c6529abce2_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_e4f6dd5c09bfd7cb4e415dbd390f3180678908e6510c2c1ed29437cbfa56d260_46_ce60b61125c6529abce2_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_e4f6dd5c09bfd7cb4e415dbd390f3180678908e6510c2c1ed29437cbfa56d260_46_ce60b61125c6529abce2_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349_81_fcb7164bb5c89b019a4d_stacked.mp4">
+          poster="./static/images/posters/more_results/val_e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349_81_fcb7164bb5c89b019a4d_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349_81_fcb7164bb5c89b019a4d_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_e6869000f4cdcc5c61bd7bcdef3a7fa0e224f204a7d7a3a6706c4b83906c0349_81_fcb7164bb5c89b019a4d_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_e9b39f624923e8e5c19ade2d7a4f5d2c5143ceb27af563d0b833378ce3f4a32d_65_b71962c40a5fb1369f14_stacked.mp4">
+          poster="./static/images/posters/more_results/val_e9b39f624923e8e5c19ade2d7a4f5d2c5143ceb27af563d0b833378ce3f4a32d_65_b71962c40a5fb1369f14_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_e9b39f624923e8e5c19ade2d7a4f5d2c5143ceb27af563d0b833378ce3f4a32d_65_b71962c40a5fb1369f14_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_e9b39f624923e8e5c19ade2d7a4f5d2c5143ceb27af563d0b833378ce3f4a32d_65_b71962c40a5fb1369f14_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_ec17e4d7c07851a08f2434c1e617baa006a710275915c9472c76287c96302b1b_73_605ba1576d700dc8d200_stacked.mp4">
+          poster="./static/images/posters/more_results/val_ec17e4d7c07851a08f2434c1e617baa006a710275915c9472c76287c96302b1b_73_605ba1576d700dc8d200_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_ec17e4d7c07851a08f2434c1e617baa006a710275915c9472c76287c96302b1b_73_605ba1576d700dc8d200_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_ec17e4d7c07851a08f2434c1e617baa006a710275915c9472c76287c96302b1b_73_605ba1576d700dc8d200_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_ee758475a3213deb32fcfecf357a02524f7043a386b78827d36e3964fa120565_70_74a81f086db1b24351c8_stacked.mp4">
+          poster="./static/images/posters/more_results/val_ee758475a3213deb32fcfecf357a02524f7043a386b78827d36e3964fa120565_70_74a81f086db1b24351c8_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_ee758475a3213deb32fcfecf357a02524f7043a386b78827d36e3964fa120565_70_74a81f086db1b24351c8_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_ee758475a3213deb32fcfecf357a02524f7043a386b78827d36e3964fa120565_70_74a81f086db1b24351c8_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_efa7134d7de3dce0faf1b43221e1e3e6bcbdec1ad9e8ae2f6aca7f98747c3453_48_0605da5d7e1b85614b0c_stacked.mp4">
+          poster="./static/images/posters/more_results/val_efa7134d7de3dce0faf1b43221e1e3e6bcbdec1ad9e8ae2f6aca7f98747c3453_48_0605da5d7e1b85614b0c_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_efa7134d7de3dce0faf1b43221e1e3e6bcbdec1ad9e8ae2f6aca7f98747c3453_48_0605da5d7e1b85614b0c_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_efa7134d7de3dce0faf1b43221e1e3e6bcbdec1ad9e8ae2f6aca7f98747c3453_48_0605da5d7e1b85614b0c_stacked.webm">
         </video>
       </div>
 
       <div class="more-results-item">
         <video class="more-results-video" muted loop playsinline preload="none" controls
-          data-src="./static/videos/more_results/val_fbeca3feec991803f489f42d166d88cd4015c6b2bf95677cd2e3c4571b7c2296_94_1aba53ac4d0ca93943f8_stacked.mp4">
+          poster="./static/images/posters/more_results/val_fbeca3feec991803f489f42d166d88cd4015c6b2bf95677cd2e3c4571b7c2296_94_1aba53ac4d0ca93943f8_stacked.jpg"
+          data-src-mp4="./static/videos/optimized/more_results/val_fbeca3feec991803f489f42d166d88cd4015c6b2bf95677cd2e3c4571b7c2296_94_1aba53ac4d0ca93943f8_stacked.mp4"
+          data-src-webm="./static/videos/optimized/more_results/val_fbeca3feec991803f489f42d166d88cd4015c6b2bf95677cd2e3c4571b7c2296_94_1aba53ac4d0ca93943f8_stacked.webm">
         </video>
       </div>
     </div>
