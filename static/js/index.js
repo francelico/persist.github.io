@@ -1,25 +1,5 @@
 window.HELP_IMPROVE_VIDEOJS = false;
 
-var INTERP_BASE = "./static/interpolation/stacked";
-var NUM_INTERP_FRAMES = 240;
-
-var interp_images = [];
-function preloadInterpolationImages() {
-  for (var i = 0; i < NUM_INTERP_FRAMES; i++) {
-    var path = INTERP_BASE + '/' + String(i).padStart(6, '0') + '.jpg';
-    interp_images[i] = new Image();
-    interp_images[i].src = path;
-  }
-}
-
-function setInterpolationImage(i) {
-  var image = interp_images[i];
-  image.ondragstart = function() { return false; };
-  image.oncontextmenu = function() { return false; };
-  $('#interpolation-image-wrapper').empty().append(image);
-}
-
-
 $(document).ready(function() {
     // Check for click events on the navbar burger icon
     $(".navbar-burger").click(function() {
@@ -59,23 +39,6 @@ $(document).ready(function() {
     	});
     }
 
-    /*var player = document.getElementById('interpolation-video');
-    player.addEventListener('loadedmetadata', function() {
-      $('#interpolation-slider').on('input', function(event) {
-        console.log(this.value, player.duration);
-        player.currentTime = player.duration / 100 * this.value;
-      })
-    }, false);*/
-    preloadInterpolationImages();
-
-    $('#interpolation-slider').on('input', function(event) {
-      setInterpolationImage(this.value);
-    });
-    setInterpolationImage(0);
-    $('#interpolation-slider').prop('max', NUM_INTERP_FRAMES - 1);
-
-    bulmaSlider.attach();
-
     (function () {
       const grid = document.getElementById("more-results-grid");
       const btn = document.getElementById("more-results-toggle");
@@ -104,9 +67,17 @@ $(document).ready(function() {
         video.load();
       }
 
-      // Load the first 4 immediately (so your default view works)
-      const initial = grid.querySelectorAll(".more-results-item:nth-child(-n+4) .more-results-video");
-      initial.forEach(ensureVideoLoaded);
+      function ensureVideoUnloaded(video) {
+        if (!video || video.dataset.loaded !== "1") return;
+        
+        video.pause();
+        video.removeAttribute('src'); // empty source
+        while (video.firstChild) {
+          video.removeChild(video.firstChild);
+        }
+        video.load();
+        delete video.dataset.loaded;
+      }
 
       // Optional: IntersectionObserver to load videos only when scrolled into view
       const io = ("IntersectionObserver" in window)
@@ -114,10 +85,11 @@ $(document).ready(function() {
             entries.forEach((e) => {
               if (e.isIntersecting) {
                 ensureVideoLoaded(e.target);
-                io.unobserve(e.target);
+              } else {
+                ensureVideoUnloaded(e.target);
               }
             });
-          }, { rootMargin: "200px" })
+          }, { rootMargin: "600px" }) // margin to preload/un-unload
         : null;
 
       function observeVisibleVideos() {
@@ -140,7 +112,11 @@ $(document).ready(function() {
 
         // Optional: if collapsing, pause videos to reduce CPU
         if (!expanded) {
-          grid.querySelectorAll(".more-results-video").forEach(v => v.pause());
+          grid.querySelectorAll(".more-results-video").forEach(v => {
+              v.pause();
+              // we don't necessarily want to unload here if they might show up again, 
+              // but IntersectionObserver will handle it if they aren't intersecting.
+          });
           grid.scrollIntoView({ behavior: "smooth", block: "start" });
         }
       });
@@ -193,60 +169,74 @@ $(document).ready(function() {
 (function () {
   const lazyVideos = document.querySelectorAll('.lazy-video');
 
+  function ensureVideoLoaded(video) {
+    if (!video || video.dataset.loaded === "1") return;
+
+    // Only add playsinline if it's not already present in HTML
+    if (!video.hasAttribute('playsinline')) {
+      video.playsinline = true;
+    }
+
+    let source_mp4, source_webm;
+
+    if (video.dataset.srcDesktopMp4 && window.innerWidth >= 768) {
+      source_webm = document.createElement('source');
+      source_webm.src = video.dataset.srcDesktopWebm;
+      source_webm.type = 'video/webm';
+      video.appendChild(source_webm);
+
+      source_mp4 = document.createElement('source');
+      source_mp4.src = video.dataset.srcDesktopMp4;
+      source_mp4.type = 'video/mp4';
+      video.appendChild(source_mp4);
+    } else if (video.dataset.srcMobileMp4) {
+      source_webm = document.createElement('source');
+      source_webm.src = video.dataset.srcMobileWebm;
+      source_webm.type = 'video/webm';
+      video.appendChild(source_webm);
+      
+      source_mp4 = document.createElement('source');
+      source_mp4.src = video.dataset.srcMobileMp4;
+      source_mp4.type = 'video/mp4';
+      video.appendChild(source_mp4);
+    } else if (video.dataset.srcMp4) {
+       source_webm = document.createElement('source');
+      source_webm.src = video.dataset.srcWebm;
+      source_webm.type = 'video/webm';
+      video.appendChild(source_webm);
+
+      source_mp4 = document.createElement('source');
+      source_mp4.src = video.dataset.srcMp4;
+      source_mp4.type = 'video/mp4';
+      video.appendChild(source_mp4);
+    }
+
+    video.dataset.loaded = "1";
+    video.load();
+  }
+
+  function ensureVideoUnloaded(video) {
+    if (!video || video.dataset.loaded !== "1") return;
+    
+    video.pause();
+    video.removeAttribute('src'); // empty source
+    while (video.firstChild) {
+      video.removeChild(video.firstChild);
+    }
+    video.load();
+    delete video.dataset.loaded;
+  }
+
   if ('IntersectionObserver' in window) {
     let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {
       entries.forEach(function(video) {
         if (video.isIntersecting) {
-          const videoTarget = video.target;
-          // Only add playsinline if it's not already present in HTML
-          if (!videoTarget.hasAttribute('playsinline')) {
-            videoTarget.playsinline = true;
-          }
-
-          let source_mp4, source_webm;
-
-          if (videoTarget.dataset.srcDesktopMp4 && window.innerWidth >= 768) {
-            source_webm = document.createElement('source');
-            source_webm.src = videoTarget.dataset.srcDesktopWebm;
-            source_webm.type = 'video/webm';
-            videoTarget.appendChild(source_webm);
-
-            source_mp4 = document.createElement('source');
-            source_mp4.src = videoTarget.dataset.srcDesktopMp4;
-            source_mp4.type = 'video/mp4';
-            videoTarget.appendChild(source_mp4);
-          } else if (videoTarget.dataset.srcMobileMp4) {
-            source_webm = document.createElement('source');
-            source_webm.src = videoTarget.dataset.srcMobileWebm;
-            source_webm.type = 'video/webm';
-            videoTarget.appendChild(source_webm);
-            
-            source_mp4 = document.createElement('source');
-            source_mp4.src = videoTarget.dataset.srcMobileMp4;
-            source_mp4.type = 'video/mp4';
-            videoTarget.appendChild(source_mp4);
-          } else if (videoTarget.dataset.srcMp4) {
-             source_webm = document.createElement('source');
-            source_webm.src = videoTarget.dataset.srcWebm;
-            source_webm.type = 'video/webm';
-            videoTarget.appendChild(source_webm);
-
-            source_mp4 = document.createElement('source');
-            source_mp4.src = videoTarget.dataset.srcMp4;
-            source_mp4.type = 'video/mp4';
-            videoTarget.appendChild(source_mp4);
-          }
-
-
-          videoTarget.load();
-          // Removed videoTarget.play() as per user request.
-          // Removed videoTarget.muted = true; and videoTarget.loop = true;
-          // as these should be set in HTML if desired, or controlled by user.
-
-          lazyVideoObserver.unobserve(videoTarget);
+          ensureVideoLoaded(video.target);
+        } else {
+          ensureVideoUnloaded(video.target);
         }
       });
-    }, { rootMargin: "200px" });
+    }, { rootMargin: "600px" });
 
     lazyVideos.forEach(function(lazyVideo) {
       lazyVideoObserver.observe(lazyVideo);
