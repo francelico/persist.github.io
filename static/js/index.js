@@ -169,8 +169,20 @@ $(document).ready(function() {
 (function () {
   const lazyVideos = document.querySelectorAll('.lazy-video');
 
+  function updatePoster(video) {
+    if (video.dataset.posterMobile && video.dataset.posterDesktop) {
+      if (window.innerWidth < 768) {
+        video.poster = video.dataset.posterMobile;
+      } else {
+        video.poster = video.dataset.posterDesktop;
+      }
+    }
+  }
+
   function ensureVideoLoaded(video) {
     if (!video || video.dataset.loaded === "1") return;
+
+    updatePoster(video);
 
     // Only add playsinline if it's not already present in HTML
     if (!video.hasAttribute('playsinline')) {
@@ -226,6 +238,9 @@ $(document).ready(function() {
     video.load();
     delete video.dataset.loaded;
   }
+
+  // Initial poster set
+  lazyVideos.forEach(updatePoster);
 
   if ('IntersectionObserver' in window) {
     let lazyVideoObserver = new IntersectionObserver(function(entries, observer) {

@@ -278,7 +278,9 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px;"
-                  class="lazy-video" autoplay muted loop playsinline preload="none"  poster="./static/images/posters/stacked_mobile_74_stacked.jpg"
+                  class="lazy-video" autoplay muted loop playsinline preload="none"
+                  data-poster-mobile="./static/images/posters/stacked_mobile_74_stacked.jpg"
+                  data-poster-desktop="./static/images/posters/stacked_videos_74_stacked_h.jpg"
                   data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/74_stacked.mp4"
                   data-src-mobile-webm="./static/videos/optimized/stacked_mobile/74_stacked.webm"
                   data-src-desktop-mp4="./static/videos/optimized/stacked_videos/74_stacked_h.mp4"
@@ -310,7 +312,7 @@
 
               <!-- Video 1 -->
                 <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                    class="lazy-video" playsinline preload="none"
+                    class="lazy-video" autoplay muted loop playsinline preload="none"
                     poster="./static/images/posters/oasis_web_walk_backwards.jpg"
                     data-src-mp4="./static/videos/optimized/oasis_web/walk_backwards.mp4"
                     data-src-webm="./static/videos/optimized/oasis_web/walk_backwards.webm">
@@ -328,7 +330,9 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  class="lazy-video" autoplay muted loop playsinline preload="none" poster="./static/images/posters/stacked_mobile_94_stacked.jpg"
+                  class="lazy-video" autoplay muted loop playsinline preload="none"
+                  data-poster-mobile="./static/images/posters/stacked_mobile_94_stacked.jpg"
+                  data-poster-desktop="./static/images/posters/stacked_videos_94_stacked_h.jpg"
                   data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/94_stacked.mp4"
                   data-src-mobile-webm="./static/videos/optimized/stacked_mobile/94_stacked.webm"
                   data-src-desktop-mp4="./static/videos/optimized/stacked_videos/94_stacked_h.mp4"
@@ -379,7 +383,9 @@
 
               <!-- Video 2 -->
               <video style="display:block; object-position: bottom; width: 100%; height: auto; object-fit: cover; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                  class="lazy-video" autoplay muted loop playsinline preload="none" poster="./static/images/posters/stacked_mobile_keyframe_stacked.jpg"
+                  class="lazy-video" autoplay muted loop playsinline preload="none"
+                  data-poster-mobile="./static/images/posters/stacked_mobile_keyframe_stacked.jpg"
+                  data-poster-desktop="./static/images/posters/stacked_videos_keyframe_stacked_h.jpg"
                   data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/keyframe_stacked.mp4"
                   data-src-mobile-webm="./static/videos/optimized/stacked_mobile/keyframe_stacked.webm"
                   data-src-desktop-mp4="./static/videos/optimized/stacked_videos/keyframe_stacked_h.mp4"
@@ -593,7 +599,9 @@
         </div>
         <div style="display: grid; grid-template-columns: 1fr; gap: 0rem; margin-bottom: 2rem;">
             <video style="display:block; object-position: bottom; width: 100%; height: 100%; object-fit: contain; border-radius: 8px; border: 1px solid rgba(0, 0, 0, 0.1);"
-                class="lazy-video" autoplay muted loop playsinline preload="none" poster="./static/images/posters/stacked_mobile_long_stacked.jpg"
+                class="lazy-video" autoplay muted loop playsinline preload="none"
+                data-poster-mobile="./static/images/posters/stacked_mobile_long_stacked.jpg"
+                data-poster-desktop="./static/images/posters/stacked_videos_long_stacked_h.jpg"
                 data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/long_stacked.mp4"
                 data-src-mobile-webm="./static/videos/optimized/stacked_mobile/long_stacked.webm"
                 data-src-desktop-mp4="./static/videos/optimized/stacked_videos/long_stacked_h.mp4"
@@ -617,9 +625,10 @@
             💡 Tip: Click on the arrows on either side to scroll through videos.
         </div>
         <div id="dyn-carousel" class="carousel results-carousel" data-slides-to-show="1">
-          <!-- no poster here, it messes up the formatting.-->
           <div class="item item-cave">
             <video id="cave" class="lazy-video" autoplay muted loop playsinline preload="none" height="100%"
+              data-poster-mobile="./static/images/posters/stacked_mobile_water_cave_stacked.jpg"
+              data-poster-desktop="./static/images/posters/stacked_videos_water_cave_stacked_h.jpg"
               data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/water_cave_stacked.mp4"
               data-src-mobile-webm="./static/videos/optimized/stacked_mobile/water_cave_stacked.webm"
               data-src-desktop-mp4="./static/videos/optimized/stacked_videos/water_cave_stacked_h.mp4"
@@ -630,8 +639,9 @@
           </div>
           </div>
           <div class="item item-waterfall">
-            <!-- no poster here, it messes up the formatting.-->
             <video id="waterfall" class="lazy-video" autoplay muted loop playsinline preload="none" height="100%"
+              data-poster-mobile="./static/images/posters/stacked_mobile_waterfall_stacked.jpg"
+              data-poster-desktop="./static/images/posters/stacked_videos_waterfall_stacked_h.jpg"
               data-src-mobile-mp4="./static/videos/optimized/stacked_mobile/waterfall_stacked.mp4"
               data-src-mobile-webm="./static/videos/optimized/stacked_mobile/waterfall_stacked.webm"
               data-src-desktop-mp4="./static/videos/optimized/stacked_videos/waterfall_stacked_h.mp4"
