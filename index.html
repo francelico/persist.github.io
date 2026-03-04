@@ -198,13 +198,13 @@
         <h2 class="title is-3 section-title">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Interactive world models continually generate video by responding to a user's actions, enabling open-ended generation capabilities.
-            However, existing models typically lack a 3D representation of the environment, meaning 3D consistency must be implicitly learned from data, and spatial memory is restricted to limited temporal context windows.
-            This results in an unrealistic user experience and presents significant obstacles to down-stream tasks such as training agents.
+          Interactive world models continually generate video by responding to a user's actions, enabling open-ended generation capabilities.
+          However, existing models typically lack a 3D representation of the environment, meaning 3D consistency must be implicitly learned from data, and spatial memory is restricted to limited temporal context windows.
+          This results in an unrealistic user experience and presents significant obstacles to down-stream tasks such as training agents.
+          </p>
           <p>
-            We present <span class="persist">PERSIST</span>, a new paradigm of world model which simulates the evolution of a latent 3D scene: <b>environment</b>, <b>camera</b>, and <b>renderer</b>.
-            This allows us to synthesize new frames with persistent spatial memory and consistent geometry.
-            Our approach achieves substantial improvements in spatial memory, 3D consistency, and long-horizon video generation quality over existing methods, producing coherent and evolving 3D worlds.
+          To address this, we present <span class="persist">PERSIST</span>, a new paradigm of world model which simulates the evolution of a latent 3D scene: <b>environment</b>, <b>camera</b>, and <b>renderer</b>.
+          This allows us to synthesize new frames with persistent spatial memory and consistent geometry. Both quantitative metrics and a qualitative user study show substantial improvements in spatial memory, 3D consistency, and long-horizon stability over existing methods, enabling coherent, evolving 3D worlds. We further demonstrate novel capabilities, including synthesising diverse 3D environments from a single image, as well as enabling fine-grained, geometry-aware control over generated experiences by supporting environment editing and specification directly in 3D space.
           </p>
         </div>
       </div>
@@ -235,7 +235,9 @@
           <div class="container is-max-desktop">
             <div class="content has-text-justified">
               <p>
-                Within 3D environments, pixel observations provide partial, highly redundant, and viewpoint-dependent snapshots of the world. Could we instead model the environment directly in 3D, using a representation that evolves over time?
+              Within 3D environments, pixel observations provide partial, highly redundant, and viewpoint-dependent snapshots of the world.
+              <i>Rather than relying on pixels alone, could a world model maintain a persistent 3D representation of the environment that evolves over time?</i>
+              To investigate this question, we study world model learning in a Minecraft-inspired voxel environment. Voxel worlds discretise space into interpretable building blocks and support rich player–environment interactions, providing a natural testbed for evaluating how explicit 3D representations influence world model simulation.
               </p>
 
               <br>
@@ -660,7 +662,7 @@
 <section class="section">
   <div class="container is-max-desktop">
 
-    <h2 class="title is-3 section-title has-text-centered">Limitations</h2>
+    <h2 class="title is-3 section-title has-text-centered">Current Limitations</h2>
 
     <!-- Full-width text -->
     <div class="content has-text-justified">
