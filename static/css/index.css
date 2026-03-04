@@ -13,27 +13,11 @@ body {
   margin-bottom: 5px;
 }
 
-/*.persist {*/
-/*  font-variant: small-caps;*/
-/*}*/
-
-/*.persist {*/
-/*  font-family: "Orbitron", sans-serif;*/
-/*  font-weight: 600;*/
-/*  letter-spacing: 0.08em;*/
-/*}*/
-
 .persist {
   font-family: "Space Grotesk", sans-serif;
   font-weight: 600;
   letter-spacing: 0.04em;
 }
-
-/*.persist {*/
-/*  font-family: "Montserrat", sans-serif;*/
-/*  font-weight: 700;*/
-/*  letter-spacing: 0.03em;*/
-/*}*/
 
 .teaser .hero-body {
   padding-top: 0;
@@ -48,18 +32,18 @@ body {
 .publication-title {
 }
 
-.publication-banner {
-  max-height: parent;
+/*.publication-banner {*/
+/*  max-height: parent;*/
 
-}
+/*}*/
 
-.publication-banner video {
-  position: relative;
-  left: auto;
-  top: auto;
-  transform: none;
-  object-fit: fit;
-}
+/*.publication-banner video {*/
+/*  position: relative;*/
+/*  left: auto;*/
+/*  top: auto;*/
+/*  transform: none;*/
+/*  object-fit: fit;*/
+/*}*/
 
 .publication-header .hero-body {
 }
@@ -268,7 +252,7 @@ body {
 /*!* mobile: anchor zoom to top-left *!*/
 @media (max-width: 768px) {
   .hero-section .video-grids {
-    grid-template-columns: 1fr; !important;/* stack vertically */
+    grid-template-columns: 1fr !important;/* stack vertically */
   }
 
   .hero-section .video-half.right .video-grid {
@@ -408,12 +392,48 @@ body {
 }
 
 .hint {
-    text-align: center;
-    color: #444444;
-    font-size: 1rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-    font-style: italic;
+  text-align: center;
+  color: #444444;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.img-cap-grid {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  align-items: center;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.img-cell img {
+  margin: 0 !important;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.cap-cell { display:flex; align-items:center; }
+
+.lim-cap{
+  line-height: 1.45;
+  font-size: 1rem;
+}
+
+/* Mobile: 1 per row */
+@media (max-width: 768px) {
+  .img-cap-grid {
+    grid-template-columns: 1fr 1fr !important;
+    margin-bottom: 0.2rem !important;
+    gap: 0.5rem !important;
+  }
+  .lim-cap {
+    line-height: 1.2 !important;
+    font-size: 0.7rem !important;
+    /*text-align: justify !important;*/
+  }
 }
 
 .more-results-grid {

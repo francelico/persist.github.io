@@ -142,7 +142,7 @@
                   </span>
                   <!-- Code Link. -->
                   <span class="link-block">
-                    <a href="https://todo"
+                    <a href="https://github.com/francelico/PERSIST"
                        class="external-link button is-normal is-rounded is-dark">
                       <span class="icon">
                           <i class="fab fa-github"></i>
@@ -659,6 +659,109 @@
 
 <section class="section">
   <div class="container is-max-desktop">
+
+    <h2 class="title is-3 section-title has-text-centered">Limitations</h2>
+
+    <!-- Full-width text -->
+    <div class="content has-text-justified">
+      <p>
+        An important limitation of our approach is the need for 3D annotations during training.
+        Future work could explore learning the 3D representation from partial or synthetic annotations, or in a fully self-supervised manner.
+        Like other autoregressive models, <span class="persist">PERSIST</span>  suffers from generation artifacts caused by error accumulation over long rollouts (<i>autoregressive drift</i>).
+        This issue can be mitigated through post-training that makes the model robust to its own generations, which we did not perform here.
+      </p>
+      <p>
+        Despite this, we find that <span class="persist">PERSIST</span>'s 3D representation often enables recovery from artifacts. While comparable models become unstable after a few hundred frames, <span class="persist">PERSIST</span> frequently maintains stability for thousands of frames, although generation artifacts become more common over time. The video below shows a 2000-frame (83-second) episode illustrating several such artifacts and recoveries.
+      </p>
+    </div>
+
+    <!-- Centered video below -->
+    <div class="columns is-centered">
+      <div class="column is-four-fifths">
+        <div class="publication-video">
+          <iframe
+            width="100%"
+            height="500"
+            src="https://www.youtube.com/embed/UtRg6EekL8s"
+            title="YouTube video player"
+            frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen>
+          </iframe>
+        </div>
+      </div>
+    </div>
+
+    <div class="img-cap-grid">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s00.png" alt="Step 0" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 0 (0 seconds).</strong> Start of the episode. Generation is stable.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s28.png" alt="Step 672" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 672 (28 seconds).</strong> A tree trunk disappears from the 3D representation. As a result only the tree foliage is rendered to the left of the agent.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s37.png" alt="Step 888" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 888 (37 seconds).</strong> Several wood blocs appear in the 3D representation. They get rendered in the agent's view.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s54.png" alt="Step 1296" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 1296 (54 seconds).</strong> The texture of the ground is drifting to a yellowish colour. The 3D representation remains stable.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s55.png" alt="Step 1320" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 1320 (55 seconds).</strong> The model recovers the correct texture thanks to the grounding provided by the 3D representation.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s69.png" alt="Step 1656" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 1656 (69 seconds).</strong> A collision gets mispredicted and the agent clips through a bloc. The ground texture begins to drift.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s70.png" alt="Step 1680" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 1680 (70 seconds).</strong> The model recovers from terrain clipping and texture drift after the agent executes a jump action.</div>
+      </div>
+    </div>
+    <div class="img-cap-grid" style="display: grid; grid-template-columns: 1fr 3fr; align-items: center; gap: 2rem; margin-bottom: 1rem;">
+      <div class="img-cell" style="display: grid; gap: 0rem;">
+        <img src="./static/images/limitations/s83.png" alt="Step 2000" style="display: block; object-fit: contain; width: 100%; height: auto; border-radius: 6px; border: 1px solid rgba(255, 255, 255, 0.1); margin: 0 auto;">
+      </div>
+      <div class="cap-cell">
+        <div class="lim-cap"><strong>Step 2000 (83 seconds).</strong> The episode concludes on a stable frame.</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<section class="section">
+  <div class="container is-max-desktop">
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3 section-title">More Results</h2>
@@ -778,7 +881,7 @@
          href="./static/videos/persist_paper.pdf">
         <i class="fas fa-file-pdf"></i>
       </a>
-      <a class="icon-link" href="https://todo" class="external-link" disabled>
+      <a class="icon-link" href="https://github.com/francelico/PERSIST" class="external-link" disabled>
         <i class="fab fa-github"></i>
       </a>
     </div>
