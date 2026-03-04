@@ -1,0 +1,228 @@
+<head>
+
+    <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="icon" href="./static/images/voxels.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+</head>
+<style>
+
+
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;          /* removes the white frame */
+  padding: 0;
+  background: #000;   /* avoids white while videos load */
+  overflow: hidden;   /* optional: prevents scrollbars */
+}
+
+/* if any parent wrapper adds spacing, kill it */
+section.hero-section {
+  margin: 0;
+  padding: 0;
+}
+/* ===== Copied essentials from your index.css (as requested) ===== */
+body {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+.link-block a { margin-top: 5px; margin-bottom: 5px; }
+
+.teaser .hero-body { padding-top: 0; padding-bottom: 3rem; }
+
+/* --- Video-grid landing hero (template-style) --- */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  width: 100vw;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-section .video-grids{
+  position:absolute;
+  inset:0;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  background:#000;
+}
+
+.hero-section .video-half{
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
+
+.hero-section .video-grid{
+  width:100%;
+  height:100%;
+  display:grid;
+  grid-template-columns: repeat(var(--cols, 4), 1fr);
+  grid-template-rows: repeat(var(--rows, 4), 1fr);
+  transform-origin:50% 50%;
+  /*animation: zoomOut 10s ease-in-out forwards;*/
+  will-change: transform;
+}
+
+.hero-section .video-cell{
+  position:relative;
+  overflow:hidden;
+  background:#000;
+}
+
+.hero-section .video-cell video{
+  width: 55vw;
+  height: 100vh;
+  object-fit:cover;
+  display:block;
+}
+
+/* Readability overlay */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.30) 50%,
+    rgba(0, 0, 0, 0.45) 100%
+  );
+}
+
+/* ===== Hero-specific centering (new, minimal, precise) ===== */
+/* This container is what guarantees geometric centering. */
+.hero-center {
+  position: absolute;
+  inset: 0;
+  z-index: 3;                 /* above overlay */
+  display: grid;
+  place-items: center;        /* exact center both axes */
+  pointer-events: none;       /* background still “feels” like bg */
+}
+
+/* Stack title + subtitle vertically, centered */
+.hero-center-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  text-align: center;
+  padding: 0 1.25rem;         /* safe on narrow screens */
+  max-width: 2200px;
+}
+
+.typewriter {
+  display: inline-block;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: typingClip 2s steps(7, end) forwards, blink 1s step-end infinite;
+  animation-delay: 0.5s;
+}
+
+.typewriter2 {
+  display: inline-block;
+  white-space: nowrap;
+  clip-path: inset(0 100% 0 0);
+  animation: typingClip 2s steps(37, end) forwards, blink 1s step-end infinite;
+  animation-delay: 2.5s;   /* start after typewriter1 finishes */
+}
+
+@keyframes typingClip {
+  to { clip-path: inset(0 0 0 0); }
+}
+
+/* cursor blinking */
+@keyframes blink {
+  from, to { border-color: transparent }
+  50% { border-color: white }
+}
+
+.hero-title {
+  /*font-family: "Space Grotesk", "Google Sans", sans-serif;*/
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #fff;
+  text-shadow: 0 12px 8px rgba(0, 0, 0, 0.6);
+
+  /* responsive size: big on desktop, sane on mobile */
+  font-size: 10vw;
+  line-height: 1.0;
+  margin: 0;                  /* IMPORTANT: avoid shifting centering */
+}
+
+/* Subtitle below, not affecting true center of the title */
+.hero-subtitle {
+  font-family: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: rgba(255,255,255,0.95);
+  text-shadow: 0 12px 8px rgba(0, 0, 0, 0.55);
+
+  font-size: 4vw;
+  line-height: 1.2;
+  margin: 0;
+}
+
+/*
+If you *literally* want the word "PERSIST" to be at the exact center
+and the subtitle to extend only downward (so the combined block isn’t centered),
+use this variant instead of .hero-center-inner:
+  .hero-center-inner { transform: translateY(0.9em); }
+But by default we center the whole stack.
+*/
+</style>
+
+<section class="hero-section">
+
+  <div class="video-grids">
+    <div class="video-half left">
+      <div class="video-grid" style="--cols: 1; --rows: 1; transform-origin:50% 50%;">
+        <div class="video-cell" style="object-position: center;">
+          <video autoplay muted loop playsinline preload="metadata">
+            <source src="./static/videos/optimized/isometric_xy_1440.mp4" type="video/mp4" media="(max-width: 768px)">
+            <source src="./static/videos/optimized/isometric_xy_1440.mp4" type="video/mp4" media="(max-width: 1400px)">
+            <source src="./static/videos/optimized/isometric_xy_1920.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+
+    <div class="video-half right">
+      <div class="video-grid" style="--cols: 1; --rows: 1;">
+        <div class="video-cell" style="object-position: right top;">
+          <video style="object-position: left top;" autoplay muted loop playsinline preload="metadata">
+            <source src="./static/videos/optimized/grid.mp4" type="video/mp4">
+          </video>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="hero-overlay"></div>
+
+  <!-- Exact center overlay -->
+  <div class="hero-center">
+    <div class="hero-center-inner">
+      <h1 class="hero-title"><span class="typewriter">PERSIST</span></h1>
+      <p class="hero-subtitle"><span class="typewriter2">World Models with Persistent 3D State</span></p>
+    </div>
+  </div>
+
+</section>
